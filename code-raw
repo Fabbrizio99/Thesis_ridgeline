@@ -1,0 +1,255 @@
+##### PACCHETTI NECESSARI
+install.packages("terra")
+install.packages("raster")
+install.packages("imageRy")
+install.packages("ggridges")
+install.packages("ggplot2")
+install.packages("gtable", type = "source")
+library(terra)
+library(raster)
+library(imageRy)
+library(ggridges)
+library(ggplot2)
+library(gtable)
+
+# import image
+setwd("/Users/mattiafabris/Desktop/tesi magistrale/Thesis")
+
+### Zona 1 (ndvi)
+ndvi2019<-rast("2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2019)
+
+ndvi2017<-rast("2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2017)
+
+ndvi2025<-rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2025)
+
+ndvi2020<-rast("2020-09-15-00_00_2020-09-15-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2020)
+
+ndvi2021<-rast("2021-09-25-00_00_2021-09-25-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2021)
+
+ndvi2022<-rast("2022-10-05-00_00_2022-10-05-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2022)
+
+ndvi2023<-rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2023)
+
+ndvi2024<-rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2024)
+
+par(mfrow=c(1,3))
+plot(ndvi2017)
+plot(ndvi2019)
+plot(ndvi2025)
+dev.off()
+
+# Dataframe
+
+df17_1 <- as.data.frame(ndvi2017, xy = FALSE, na.rm = TRUE)
+df19_1 <- as.data.frame(ndvi2019, xy = FALSE, na.rm = TRUE)
+df25_1 <- as.data.frame(ndvi2025, xy = FALSE, na.rm = TRUE)
+# aggiungo l'anno
+df17_1$year <- 2017
+df19_1$year <- 2019
+df25_1$year <- 2025
+# seleziono la colonna
+df17_1 <- df17_1[, c(1, ncol(df17_1))]
+df19_1 <- df19_1[, c(1, ncol(df19_1))]
+df25_1 <- df25_1[, c(1, ncol(df25_1))]
+# rinomino le colonne
+colnames(df17_1) <- c("value", "year")
+colnames(df19_1) <- c("value", "year")
+colnames(df25_1) <- c("value", "year")
+
+df_all_zona1 <- rbind(df17_1, df19_1, df25_1)
+df_all_zona1$year <- as.factor(df_all_zona1$year)
+
+ridge1<- ggplot(df_all_zona1, aes(x = value, y = year, fill = year)) +
+  geom_density_ridges(alpha = 0.7) +
+  theme_minimal()
+ridge1
+
+#ridge 1 con più righe (almeno 6)
+df20_1 <- as.data.frame(ndvi2020, xy = FALSE, na.rm = TRUE)
+df21_1 <- as.data.frame(ndvi2021, xy = FALSE, na.rm = TRUE)
+df22_1 <- as.data.frame(ndvi2022, xy = FALSE, na.rm = TRUE)
+df23_1 <- as.data.frame(ndvi2023, xy = FALSE, na.rm = TRUE)
+df24_1 <- as.data.frame(ndvi2024, xy = FALSE, na.rm = TRUE)
+# aggiungo l'anno
+df20_1$year <- 2020
+df21_1$year <- 2021
+df22_1$year <- 2022
+df23_1$year <- 2023
+df24_1$year <- 2024
+# seleziono la colonna
+df20_1 <- df20_1[, c(1, ncol(df20_1))]
+df21_1 <- df21_1[, c(1, ncol(df21_1))]
+df22_1 <- df22_1[, c(1, ncol(df22_1))]
+df23_1 <- df23_1[, c(1, ncol(df23_1))]
+df24_1 <- df24_1[, c(1, ncol(df24_1))]
+# rinomino le colonne
+colnames(df20_1) <- c("value", "year")
+colnames(df21_1) <- c("value", "year")
+colnames(df22_1) <- c("value", "year")
+colnames(df23_1) <- c("value", "year")
+colnames(df24_1) <- c("value", "year")
+
+df_all_zona1b <- rbind(df17_1, df19_1, df20_1, df21_1, df22_1, df22_1, df23_1, df24_1, df25_1)
+df_all_zona1b$year <- as.factor(df_all_zona1b$year)
+
+ridge1b<- ggplot(df_all_zona1b, aes(x = value, y = year, fill = year)) +
+  geom_density_ridges(alpha = 0.7, scale = 1) +
+  theme_minimal()
+ridge1b
+
+### Zona 2 (ndvi)
+ndvi2_2017<-rast("2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L1C_NDVI copia.tiff")
+plot(ndvi2_2017)
+
+ndvi2_2019<-rast("2019-09-19-00_00_2019-09-19-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi2_2019)
+
+ndvi2_2025<-rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L1C_NDVI copia.tiff")
+plot(ndvi2_2025)
+#creo il dataframe
+df17_2 <- as.data.frame(ndvi2_2017, xy = FALSE, na.rm = TRUE)
+df19_2 <- as.data.frame(ndvi2_2019, xy = FALSE, na.rm = TRUE)
+df25_2 <- as.data.frame(ndvi2_2025, xy = FALSE, na.rm = TRUE)
+#aggiungo l'anno
+df17_2$year <- 2017
+df19_2$year <- 2019
+df25_2$year <- 2025
+#seleziono la prima e ultima colonna
+df17_2 <- df17_2[, c(1, ncol(df17_2))]
+df19_2 <- df19_2[, c(1, ncol(df19_2))]
+df25_2 <- df25_2[, c(1, ncol(df25_2))]
+#rinomino le colonne
+colnames(df17_2) <- c("value", "year")
+colnames(df19_2) <- c("value", "year")
+colnames(df25_2) <- c("value", "year")
+
+df_all_zona2 <- rbind(df17_2, df19_2, df25_2)
+df_all_zona2$year <- as.factor(df_all_zona2$year)
+# Secondo plot
+ridge2<- ggplot(df_all_zona2, aes(x = value, y = year, fill = year)) +
+  geom_density_ridges(alpha = 0.7, scale = 1) +
+  theme_minimal()
+ridge2
+
+ls()
+
+# Zona 3 (Cima Panarotta, ndvi)
+
+ndvi3_2017<-rast("2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi3_2017)
+
+ndvi3_2019<-rast("2019-09-04-00_00_2019-09-04-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi3_2019)
+
+ndvi3_2025<-rast("2025-09-04-00_00_2025-09-04-23_59_Sentinel-2_L1C_NDVI.tiff")
+plot(ndvi3_2025)
+
+#creo il dataframe
+df17_3 <- as.data.frame(ndvi3_2017, xy = FALSE, na.rm = TRUE)
+df19_3 <- as.data.frame(ndvi3_2019, xy = FALSE, na.rm = TRUE)
+df25_3 <- as.data.frame(ndvi3_2025, xy = FALSE, na.rm = TRUE)
+
+#aggiungo l'anno
+df17_3$year <- 2017
+df19_3$year <- 2019
+df25_3$year <- 2025
+
+#seleziono la prima e ultima colonna
+df17_3 <- df17_3[, c(1, ncol(df17_3))]
+df19_3 <- df19_3[, c(1, ncol(df19_3))]
+df25_3 <- df25_3[, c(1, ncol(df25_3))]
+
+#rinomino le colonne
+colnames(df17_3) <- c("value", "year")
+colnames(df19_3) <- c("value", "year")
+colnames(df25_3) <- c("value", "year")
+
+df_all_zona3 <- rbind(df17_3, df19_3, df25_3)
+df_all_zona3$year <- as.factor(df_all_zona3$year)
+
+# Terzo plot
+ridge3<- ggplot(df_all_zona3, aes(x = value, y = year, fill = year)) +
+  geom_density_ridges(alpha = 0.7, scale = 1) +
+  theme_minimal()
+ridge3
+
+
+### zona 4 (ndwi)
+
+ndwi2017<-rast("2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2017)
+
+ndwi2019<-rast("2019-09-16-00_00_2019-09-16-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2019)
+
+ndwi2020<-rast("2020-09-15-00_00_2020-09-15-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2020)
+
+ndwi2021<-rast("2021-09-28-00_00_2021-09-28-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2021)
+
+ndwi2022<-rast("2022-09-20-00_00_2022-09-20-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2022)
+
+ndwi2023<-rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2023)
+
+ndwi2024<-rast("2024-09-29-00_00_2024-09-29-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2024)
+
+ndwi2025<-rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L1C_NDWI.tiff")
+plot(ndwi2025)
+
+#ridge 1 con più righe (almeno 6)
+dfw17 <- as.data.frame(ndwi2017, xy = FALSE, na.rm = TRUE)
+dfw19 <- as.data.frame(ndwi2019, xy = FALSE, na.rm = TRUE)
+dfw20 <- as.data.frame(ndwi2020, xy = FALSE, na.rm = TRUE)
+dfw21 <- as.data.frame(ndwi2021, xy = FALSE, na.rm = TRUE)
+dfw22 <- as.data.frame(ndwi2022, xy = FALSE, na.rm = TRUE)
+dfw23 <- as.data.frame(ndwi2023, xy = FALSE, na.rm = TRUE)
+dfw24 <- as.data.frame(ndwi2024, xy = FALSE, na.rm = TRUE)
+dfw25 <- as.data.frame(ndwi2025, xy = FALSE, na.rm = TRUE)
+# aggiungo l'anno
+dfw17$year <- 2017
+dfw19$year <- 2019
+dfw20$year <- 2020
+dfw21$year <- 2021
+dfw22$year <- 2022
+dfw23$year <- 2023
+dfw24$year <- 2024
+dfw25$year <- 2025
+# seleziono la colonna
+dfw17 <- dfw17[, c(1, ncol(dfw17))]
+dfw19 <- dfw19[, c(1, ncol(dfw19))]
+dfw20 <- dfw20[, c(1, ncol(dfw20))]
+dfw21 <- dfw21[, c(1, ncol(dfw21))]
+dfw22 <- dfw22[, c(1, ncol(dfw22))]
+dfw23 <- dfw23[, c(1, ncol(dfw23))]
+dfw24 <- dfw24[, c(1, ncol(dfw24))]
+dfw25 <- dfw25[, c(1, ncol(dfw25))]
+# rinomino le colonne
+colnames(dfw17) <- c("value", "year")
+colnames(dfw19) <- c("value", "year")
+colnames(dfw20) <- c("value", "year")
+colnames(dfw21) <- c("value", "year")
+colnames(dfw22) <- c("value", "year")
+colnames(dfw23) <- c("value", "year")
+colnames(dfw24) <- c("value", "year")
+colnames(dfw25) <- c("value", "year")
+
+dfw_all <- rbind(dfw17, dfw19, dfw20, dfw21, dfw22, dfw23, dfw24, df25)
+dfw_all$year <- as.factor(dfw_all$year)
+length(unique(dfw_all$year))
+table(dfw_all$year)
+ridge1w<- ggplot(dfw_all, aes(x = value, y = year, fill = year)) +
+  geom_density_ridges(alpha = 0.7, scale = 1) +
+  theme_minimal()
+ridge1w
