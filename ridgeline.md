@@ -32,12 +32,12 @@ library(gtable)
 The geom geom_density_ridges calculates density estimates from the provided data and then plots those, using the ridgeline visualization. The height aesthetic does not need to be specified in this case.
 
 ```{r, eval=F}
-ridge1b<- ggplot(df_all_zona1b, aes(x = value, y = year, fill = year)) +
+ridge1b <- ggplot(df_all_zona1b, aes(x = value, y = year, fill = year)) +
   geom_density_ridges(alpha = 0.7, scale = 1) +
   theme_minimal()
-ridge1b
 ```
-<img src="Rplotndwi.pdf" width="100%" />
+
+<img src="Rplotndwi.png" width="100%" />
 
 
 
