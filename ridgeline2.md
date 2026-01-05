@@ -83,9 +83,9 @@ Temporal changes were visualized using Ridgeline Plots
 ggplot(df_totale, aes(x = membership, y = stato, fill = stato)) +
   geom_density_ridges(alpha = 0.7, quantile_lines = TRUE, quantiles = 2, scale = 1.2) +
   theme_minimal() +
-  labs(title = "Traiettoria Recupero Forestale",
-       subtitle = "Evoluzione della fuzzy membership: Stabilità -> Collasso -> Resilienza",
-       x = "Grado di Appartenenza (Fuzzy Membership)",
+  labs(title = "Forest Recovery Trajectory",
+       subtitle = "Evolution of fuzzy membership",
+       x = "Fuzzy Membership",
        y = NULL) +
   xlim(0, 1)
 ```
@@ -95,10 +95,16 @@ ggplot(df_totale, aes(x = membership, y = stato, fill = stato)) +
 ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
   geom_density_ridges(alpha = 0.7, quantile_lines = TRUE, quantiles = 2, scale = 1.2) +
   theme_minimal() +
-  labs(title = "Distribuzione dei Valori NDVI (Dato Grezzo)",
-       subtitle = "Confronto diretto della biomassa fotosintetica senza filtri fuzzy",
-       x = "Valore NDVI (-1 to 1)",
+  labs(title = "Distribution of NDVI Values",
+       subtitle = "Direct comparison of photosynthetic biomass without fuzzy filters",
+       x = "NDVI value (-1 to 1)",
        y = NULL) +
   xlim(-0.2, 1)
 ```
 <img src="RplotNDVI.png" width="100%" />
+
+# 3. Interpretation of Results
+
+- 2017 (Pre-Vaia): A narrow, unimodal distribution peaking at 𝜇≈1, indicating high stability and forest homogeneity.
+- 2019 (Post-Vaia): a flattened, broad distribution. This reflects the collapse of the forest structure and the resulting heterogeneous landscape.
+- 2021-2025 (Recovery): The distribution gradually re-stabilises into a unimodal shape centred around 𝜇≈0.4 - 0.5. This indicates the establishment of a stable pioneer cover (shrubs/grasses), which has successfully stabilised the site even though the original arboreal biomass has not yet been restored.
