@@ -36,6 +36,33 @@ b8_23 <- rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
 b4_25 <- rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
 b8_25 <- rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
 
+### Plot delle immagini dalle 3 bande (no area fissa perchè troppo piccola)
+# 2017
+b4_17t <- resample(b4_17, b8_17, method = "near")
+b3_17t <- resample(b3_17, b8_17, method = "near")
+stack17 <- c(b8_17, b4_17t, b3_17t)
+im.plotRGB(stack17,r = 1, g = 2, b = 3, title = "RGB 2017")
+# 2019
+b4_19t <- resample(b4_19, b8_19, method = "near")
+b3_19t <- resample(b3_19, b8_19, method = "near")
+stack19 <- c(b8_19, b4_19t, b3_19t)
+im.plotRGB(stack19,r = 1, g = 2, b = 3, title = "RGB 2019")
+# 2021
+b4_21t <- resample(b4_21, b8_21, method = "near")
+b3_21t <- resample(b3_21, b8_21, method = "near")
+stack21 <- c(b8_21, b4_21t, b3_21t)
+im.plotRGB(stack21,r = 1, g = 2, b = 3, title = "RGB 2021")
+# 2023
+b4_23t <- resample(b4_23, b8_23, method = "near")
+b3_23t <- resample(b3_23, b8_23, method = "near")
+stack23 <- c(b8_23, b4_23t, b3_23t)
+im.plotRGB(stack23,r = 1, g = 2, b = 3, title = "RGB 2023")
+# 2025
+b4_25t <- resample(b4_25, b8_25, method = "near")
+b3_25t <- resample(b3_25, b8_25, method = "near")
+stack25 <- c(b8_25, b4_25t, b3_25t)
+im.plotRGB(stack25,r = 1, g = 2, b = 3, title = "RGB 2025")
+
 # Selezione dell'area di 500m^2 partendo da un punto a scelta
 
 plot(b4_19)
@@ -51,7 +78,6 @@ area_fissa <- ext(centro_x - offset, centro_x + offset, centro_y - offset, centr
 area_fissa <- ext(cx - offset, cx + offset, cy - offset, cy + offset)
 print(area_fissa)
 area_fissa <- ext(11.5405294070109, 11.5449294070109, 46.2561922332979, 46.2605922332979)
-
 
 # Calcolo gli ndvi degli anni 
 # Crop con area fissa 
