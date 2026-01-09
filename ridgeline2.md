@@ -11,8 +11,8 @@ However, natural ecosystems, especially after severe disturbances such as Storm 
 
 Using fuzzy logic in this model, each pixel is not a discrete class, but an ‘empirical model of reality’ with a degree of membership (𝜇) continuous between 0 and 1.
 
-- Value 1.0: Represents the "Ideal Forest" (full photosynthetic biomass); 
-- Value 0.0: Represents the total absence of forest characteristics (bare soil, rock, or urban surfaces);  
+- Value 1.0: represents the "Ideal forest" (full photosynthetic biomass); 
+- Value 0.0: represents the total absence of forest characteristics (bare soil, rock, or urban surfaces);  
 - Intermediate Values (0.2 - 0.7): Describe the typical heterogeneity of post-disturbance environments, characterised by fallen tree trunks, pioneer herbaceous vegetation and shrubs.
 
 The main objective of this analysis is to monitor the trajectory of forest recovery over time. 
@@ -37,11 +37,26 @@ library(ggridges)
 library(ggplot2)
 library(gtable)
 ```
-<img src="2017 Val di Fiemme.jpg" width="80%" />
-<img src="2019 Val di Fiemme.jpg" width="80%" />
+
+<p align="center">
+  <img src="2017 Val di Fiemme.jpg" width="35%" />
+  <b>2017</b>
+  <img src="2019 Val di Fiemme.jpg" width="35%" /> 
+  <b>2019</b>
+</p>
 
 Here we can see two images of the same area in Trentino, specifically an area of Val di Fiemme. The first image dates back to 2017, while the second is from 2019.
-The storm took place in October 2018 and here you can see the damage it caused in this area.
+The storm took place in October 2018, and here you can see the damage it caused in this area.
+
+Another possible visualisation of the disaster can be obtained by observing false-colour RGB(NIR-Red-Green) images. This technique integrates the Near-Infrared (NIR) band, making it easier to identify stress in vegetation compared to true-colour visualisation, due to the specific spectral response of healthy plants.
+
+<p align="center">
+  <img src="Rplotrgb2017.png" width="25%" />
+  <img src="Rplotrgb2019.png" width="25%" /> 
+  <img src="Rplotrgb2021.png" width="25%" /> 
+  <img src="Rplotrgb2023.png" width="25%" /> 
+  <img src="Rplotrgb2025.png" width="25%" /> 
+</p>
 
 Ridgeline plots were used on two occasions:
 - for fuzzy membership;
@@ -49,9 +64,9 @@ Ridgeline plots were used on two occasions:
 
 # 2. Methodology and R Implementation
 
-## Phase 1: Spatial Standardization
+## Phase 1: Spatial Standardisation
 
-A fixed region of interest measuring approximately 500 m x 500 m has been defined to create greater uniformity. This ensures that the temporal comparison between 2017, 2019, 2021, 2023 and 2025 takes place on exactly the same spatial grid.
+A fixed region of interest measuring approximately 500 m x 500 m has been defined to create greater uniformity. This ensures that the temporal comparison between 2017, 2019, 2021, 2023 and 2025 takes place on the same spatial grid.
 
 ## Phase 2: Scientific calculation of NDVI
 Instead of using pre-processed RGB images, the normalised vegetation index (NDVI) was calculated using raw Sentinel-2 L2A bands: B04 (red) and B08 (NIR). This avoids the colour distortion or saturation common in 8-bit compressed files.
@@ -76,8 +91,8 @@ In this way, we transform a raw spectral index into a meaningful probability of 
 ```{r, eval=F}
 mem17f <- clamp((ndvi17f - 0.3) / (0.8 - 0.3), 0, 1)
 ```
-## Phase 4: Statistical Visualization (Ridgeline Plots) 
-Temporal changes were visualized using Ridgeline Plots
+## Phase 4: Statistical Visualisation (Ridgeline plots) 
+Temporal changes were visualised using Ridgeline plots
 
 ```{r, eval=F}
 ggplot(df_totale, aes(x = membership, y = stato, fill = stato)) +
