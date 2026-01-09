@@ -1,5 +1,5 @@
 ---
-Title: "Tracking Forest Recovery After Vaia: A Fuzzy Logic Approach with Ridgeline plots"
+Title: "Tracking forest recovery after Vaia: a fuzzy logic approach with Ridgeline plots"
 Author: "Mattia Fabris"
 Date: "2026-01-05"
 Output: html_document
@@ -21,7 +21,7 @@ Instead, the focus is entirely on quantifying how close each pixel is to returni
 By using a continuous scale from 0 (non-forest) to 1 (full forest), we ensure that the resulting temporal visualisations, such as Ridgeline Plots, remain immediately intuitive: a shift to the right of the curve clearly signals forest regrowth. 
 Conversely, attempting to plot three or four distinct classes simultaneously would complicate interpretation.
 
-# 1. Ridgeline Plots
+# 1. Ridgeline plots
 
 Ridgeline graphs are partially overlapping line graphs that create the impression of a mountain range. They can be very useful for visualising changes in distributions over time or space.
 
@@ -62,9 +62,9 @@ Ridgeline plots were used on two occasions:
 - for fuzzy membership;
 - for calculating the NDVI.
 
-# 2. Methodology and R Implementation
+# 2. Methodology and R implementation
 
-## Phase 1: Spatial Standardisation
+## Phase 1: Spatial standardisation
 
 A fixed region of interest measuring approximately 500 m x 500 m has been defined to create greater uniformity. This ensures that the temporal comparison between 2017, 2019, 2021, 2023 and 2025 takes place on the same spatial grid.
 
@@ -74,7 +74,7 @@ Instead of using pre-processed RGB images, the normalised vegetation index (NDVI
 ```{r, eval=F}
 ndvi17f <- (crop(b8_17, area_fissa) - crop(b4_17, area_fissa)) / (crop(b8_17, area_fissa) + crop(b4_17, area_fissa))
 ```
-## Phase 3: Fuzzy Transformation
+## Phase 3: Fuzzy transformation
 In this step, the analysis moves from purely physical measurements (NDVI) to an ecological interpretation of the data. The main goal is to make visible the inherent uncertainty of a landscape undergoing recovery.
 
 While a standard map might simply label a pixel as “Forest” or “Non-forest” using a hard cut-off, we use a linear transformation, implemented via the clamp function, to create a continuous gradient. This process essentially teaches the model how to interpret “green” based on the actual characteristics of the site:
@@ -91,7 +91,7 @@ In this way, we transform a raw spectral index into a meaningful probability of 
 ```{r, eval=F}
 mem17f <- clamp((ndvi17f - 0.3) / (0.8 - 0.3), 0, 1)
 ```
-## Phase 4: Statistical Visualisation (Ridgeline plots) 
+## Phase 4: Statistical visualisation (Ridgeline plots) 
 Temporal changes were visualised using Ridgeline plots
 
 ```{r, eval=F}
@@ -117,6 +117,37 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
   xlim(-0.2, 1)
 ```
 <img src="RplotNDVI.png" width="100%" />
+
+Fuzzy membership without thresholds, based only on NDVI.
+
+```{r, eval=F}
+##### Fuzzy senza soglie
+mem17_raw <- clamp(ndvi17f, 0, 1)
+mem19_raw <- clamp(ndvi19f, 0, 1)
+mem21_raw <- clamp(ndvi21f, 0, 1)
+mem23_raw <- clamp(ndvi23f, 0, 1)
+mem25_raw <- clamp(ndvi25f, 0, 1)
+
+# Dataframe
+df17r <- as.data.frame(mem17_raw, xy=FALSE); colnames(df17r)[1] <- "membership"; df17r$stato <- "1. 2017 (Pre-Vaia)"
+df19r <- as.data.frame(mem19_raw, xy=FALSE); colnames(df19r)[1] <- "membership"; df19r$stato <- "2. 2019 (Post-Vaia)"
+df21r <- as.data.frame(mem21_raw, xy=FALSE); colnames(df21r)[1] <- "membership"; df21r$stato <- "3. 2021 (Recupero)"
+df23r <- as.data.frame(mem23_raw, xy=FALSE); colnames(df23r)[1] <- "membership"; df23r$stato <- "4. 2023 (Recupero)"
+df25r <- as.data.frame(mem25_raw, xy=FALSE); colnames(df25r)[1] <- "membership"; df25r$stato <- "5. 2025 (Recupero)"
+
+
+df_totale_raw <- rbind(df17r, df19r, df21r, df23r, df25r)
+
+# Plot senza soglie
+ggplot(df_totale_raw, aes(x = membership, y = stato, fill = stato)) +
+  geom_density_ridges(alpha = 0.7, quantile_lines = TRUE, quantiles = 2, scale = 1.2) +
+  theme_minimal() +
+  labs(title = "Fuzzy Membership",
+       x = "Membership (NDVI)",
+       y = NULL) +
+  xlim(0, 1)
+```
+<img src="Rplotfuzzynosoglie.png" width="100%" />
 
 # 3. Interpretation of Results
 
