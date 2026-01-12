@@ -152,7 +152,9 @@ Here too, we can use false-colour RGB(NIR-Red-Green) images visualisation.
 The operational study scheme for the area that I used here is the same as that used previously in the Val di Fiemme case study. 
 So I identified a study area (500m x 500m), then I calculated the NDVI for the area, and finally I performed the fuzzy transformation and created the ridgeline plots to visualise the fuzzy membership and distribution of the NDVI index.
 
-Here you can find the results.
+Here you can find the results, preceded by an image of the selected fixed area.
+
+<img src="Rplotareafissa.png" width="45%" />
 
 <p align="center">
   <img src="RplotMarcesina fuzzy.png" width="45%" />
