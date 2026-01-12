@@ -153,8 +153,9 @@ The operational study scheme for the area that I used here is the same as that u
 So I identified a study area (500m x 500m), then I calculated the NDVI for the area, and finally I performed the fuzzy transformation and created the ridgeline plots to visualise the fuzzy membership and distribution of the NDVI index.
 
 Here you can find the results, preceded by an image of the selected fixed area.
-
+<p align="center">
 <img src="Rplotareafissa.png" width="45%" />
+</p>
 
 <p align="center">
   <img src="RplotMarcesina fuzzy.png" width="45%" />
