@@ -68,6 +68,10 @@ Ridgeline plots were used on two occasions:
 
 A fixed region of interest measuring approximately 500 m x 500 m has been defined to create greater uniformity. This ensures that the temporal comparison between 2017, 2019, 2021, 2023 and 2025 takes place on the same spatial grid.
 
+<p align="center">
+  <img src="Rplotareafiemme.png" width="80%" />
+</p>
+
 ## Phase 2: Scientific calculation of NDVI
 Instead of using pre-processed RGB images, the normalised vegetation index (NDVI) was calculated using raw Sentinel-2 L2A bands: B04 (red) and B08 (NIR). This avoids the colour distortion or saturation common in 8-bit compressed files.
 
@@ -154,7 +158,7 @@ So I identified a study area (500m x 500m), then I calculated the NDVI for the a
 
 Here you can find the results, preceded by an image of the selected fixed area.
 <p align="center">
-<img src="Rplotareafissa.png" width="45%" />
+  <img src="Rplotareamarcesina.png" width="80%" />
 </p>
 
 <p align="center">
