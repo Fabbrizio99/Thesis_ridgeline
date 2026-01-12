@@ -118,37 +118,6 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
 ```
 <img src="RplotNDVI.png" width="100%" />
 
-Fuzzy membership without thresholds, based only on NDVI.
-
-```{r, eval=F}
-##### Fuzzy senza soglie
-mem17_raw <- clamp(ndvi17f, 0, 1)
-mem19_raw <- clamp(ndvi19f, 0, 1)
-mem21_raw <- clamp(ndvi21f, 0, 1)
-mem23_raw <- clamp(ndvi23f, 0, 1)
-mem25_raw <- clamp(ndvi25f, 0, 1)
-
-# Dataframe
-df17r <- as.data.frame(mem17_raw, xy=FALSE); colnames(df17r)[1] <- "membership"; df17r$stato <- "1. 2017 (Pre-Vaia)"
-df19r <- as.data.frame(mem19_raw, xy=FALSE); colnames(df19r)[1] <- "membership"; df19r$stato <- "2. 2019 (Post-Vaia)"
-df21r <- as.data.frame(mem21_raw, xy=FALSE); colnames(df21r)[1] <- "membership"; df21r$stato <- "3. 2021 (Recupero)"
-df23r <- as.data.frame(mem23_raw, xy=FALSE); colnames(df23r)[1] <- "membership"; df23r$stato <- "4. 2023 (Recupero)"
-df25r <- as.data.frame(mem25_raw, xy=FALSE); colnames(df25r)[1] <- "membership"; df25r$stato <- "5. 2025 (Recupero)"
-
-
-df_totale_raw <- rbind(df17r, df19r, df21r, df23r, df25r)
-
-# Plot senza soglie
-ggplot(df_totale_raw, aes(x = membership, y = stato, fill = stato)) +
-  geom_density_ridges(alpha = 0.7, quantile_lines = TRUE, quantiles = 2, scale = 1.2) +
-  theme_minimal() +
-  labs(title = "Fuzzy Membership",
-       x = "Membership (NDVI)",
-       y = NULL) +
-  xlim(0, 1)
-```
-<img src="Rplotfuzzynosoglie.png" width="100%" />
-
 # 3. Interpretation of Results
 
 - 2017 (Pre-Vaia): A narrow, unimodal distribution peaking at 𝜇≈1, indicating high stability and forest homogeneity.
