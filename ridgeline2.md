@@ -122,7 +122,7 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
 ```
 <img src="RplotNDVI.png" width="100%" />
 
-# 3. Interpretation of Results
+# 3. Interpretation of results
 
 - 2017 (Pre-Vaia): A narrow, unimodal distribution peaking at 𝜇≈1, indicating high stability and forest homogeneity.
 - 2019 (Post-Vaia): a flattened, broad distribution. This reflects the collapse of the forest structure and the resulting heterogeneous landscape.
@@ -149,7 +149,7 @@ Here too, we can use false-colour RGB(NIR-Red-Green) images visualisation.
   <img src="Rplot piana di marcesina 2021.png" width="25%" /> 
   <img src="Rplot piana di marcesina 2023.png" width="25%" /> 
   <img src="Rplot Marcesina 2025.png" width="25%" /> 
-</p
+</p>
 
 # Methodology and R implementation
 
@@ -166,6 +166,11 @@ Here you can find the results, preceded by an image of the selected fixed area.
   <img src="RplotMarcesinaNDVI.png" width="45%" /> 
 </p>
 
+# Interpretation of results
 
-
+Here, the graphs show some differences compared to the previous case of Val di Fiemme.
+- 2017 (Pre-Vaia): the NDVI curve is high and narrow, with a marked peak around the value 0.85, and the fuzzy membership is located at the value 𝜇≈1. This indicates the presence of a homogeneous and mature forest.
+- 2019 (Post-Vaia): NDVI drops but not drastically towards 0, and the fuzzy distribution becomes flat. This indicates that there is a lot of heterogeneity, probably due to the presence of grass or shrubs that covered the ground after the trees fell. Another possibility is that the fallen trunks still had their leaves.
+- 2021 (Recovery): here we see a shift in both the NDVI and fuzzy membership curves to the left, indicating a decrease in vegetation index values, particularly for forests. This may be due to salvage logging, leading to greater exposure of bare soil.
+- 2023 - 2025 (Recovery): the curves shift significantly to the right, indicating a recovery. However, we note that the distribution of the NDVI is bimodal, probably due to areas where vegetation has almost returned to its initial values and areas with slower recovery. The fuzzy membership confirms this, as we see a peak towards 1, but there is still a tail to the left.
 
