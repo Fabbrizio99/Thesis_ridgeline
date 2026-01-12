@@ -77,7 +77,7 @@ ndvi17f <- (crop(b8_17, area_fissa) - crop(b4_17, area_fissa)) / (crop(b8_17, ar
 ## Phase 3: Fuzzy transformation
 In this step, the analysis moves from purely physical measurements (NDVI) to an ecological interpretation of the data. The main goal is to make visible the inherent uncertainty of a landscape undergoing recovery.
 
-While a standard map might simply label a pixel as “Forest” or “Non-forest” using a hard cut-off, we use a linear transformation, implemented via the clamp function, to create a continuous gradient. This process essentially teaches the model how to interpret “green” based on the actual characteristics of the site:
+While a standard map might label a pixel as “Forest” or “Non-forest” using a hard cut-off, we use a linear transformation, implemented via the clamp function, to create a continuous gradient. This process essentially teaches the model how to interpret “green” based on the actual characteristics of the site:
 
 Setting thresholds: we set 0.3 as the lower limit for “Non-forest” and 0.8 as the upper limit for “Pure forest”.
 
@@ -123,3 +123,42 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
 - 2017 (Pre-Vaia): A narrow, unimodal distribution peaking at 𝜇≈1, indicating high stability and forest homogeneity.
 - 2019 (Post-Vaia): a flattened, broad distribution. This reflects the collapse of the forest structure and the resulting heterogeneous landscape.
 - 2021-2025 (Recovery): The distribution gradually re-stabilises into a unimodal shape centred around 𝜇≈0.4 - 0.5. This indicates the establishment of a stable pioneer cover (shrubs/grasses), which has successfully stabilised the site even though the original arboreal biomass has not yet been restored.
+
+#  Area  of study: "Piana di Marcesina"
+The Marcesina Plain is a vast plateau located in the north-eastern part of the "Altopiano dei Sette Comuni", between the province of Vicenza and the autonomous province of Trento.
+The landscape here suffered devastating damage, with thousands of hectares of forest felled (approximately 800,000 cubic metres of timber in the area alone) and a radically transformed area.
+
+<p align="center">
+  <img src="2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L2A_True_color.jpg" width="25%" />
+  <b>2017</b>
+  <img src="2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_True_color.jpg" width="25%" /> 
+  <b>2019</b>
+  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.jpg" width="25%" /> 
+  <b>2025</b>
+</p>
+
+Here too, we can use false-colour RGB(NIR-Red-Green) images visualisation.
+
+<p align="center">
+  <img src="Rplot piana di marcesina 2017.png" width="25%" />
+  <img src="Rplot piana di marcesina 2019.png" width="25%" /> 
+  <img src="Rplot piana di marcesina 2021.png" width="25%" /> 
+  <img src="Rplot piana di marcesina 2023.png" width="25%" /> 
+  <img src="Rplot Marcesina 2025.png" width="25%" /> 
+</p
+
+# Methodology and R implementation
+
+The operational study scheme for the area that I used here is the same as that used previously in the Val di Fiemme case study. 
+So I identified a study area (500m x 500m), then I calculated the NDVI for the area, and finally I performed the fuzzy transformation and created the ridgeline plots to visualise the fuzzy membership and distribution of the NDVI index.
+
+Here you can find the results.
+
+<p align="center">
+  <img src="RplotMarcesina fuzzy.png" width="45%" />
+  <img src="RplotMarcesinaNDVI.png" width="45%" /> 
+</p>
+
+
+
+
