@@ -148,7 +148,7 @@ Here too, we can use false-colour RGB(NIR-Red-Green) images visualisation.
   <img src="Rplot piana di marcesina 2019.png" width="25%" /> 
   <img src="Rplot piana di marcesina 2021.png" width="25%" /> 
   <img src="Rplot piana di marcesina 2023.png" width="25%" /> 
-  <img src="Rplot Marcesina 2025.png" width="25%" /> 
+  <img src="Rplot Marcesina 2025.png" width="30%" /> 
 </p>
 
 # Methodology and R implementation
@@ -158,19 +158,53 @@ So I identified a study area (500m x 500m), then I calculated the NDVI for the a
 
 Here you can find the results, preceded by an image of the selected fixed area.
 <p align="center">
-  <img src="Rplotareamarcesina.png" width="80%" />
+  <img src="Rplotmarcesinaarea.png" width="80%" />
 </p>
 
 <p align="center">
-  <img src="RplotMarcesina fuzzy.png" width="45%" />
-  <img src="RplotMarcesinaNDVI.png" width="45%" /> 
+  <img src="Rplotmarcesina fuzzy.png" width="45%" />
+  <img src="Rplotmarcesinandvi.png" width="45%" /> 
 </p>
 
 # Interpretation of results
 
 Here, the graphs show some differences compared to the previous case of Val di Fiemme.
-- 2017 (Pre-Vaia): the NDVI curve is high and narrow, with a marked peak around the value 0.85, and the fuzzy membership is located at the value 𝜇≈1. This indicates the presence of a homogeneous and mature forest.
-- 2019 (Post-Vaia): NDVI drops but not drastically towards 0, and the fuzzy distribution becomes flat. This indicates that there is a lot of heterogeneity, probably due to the presence of grass or shrubs that covered the ground after the trees fell. Another possibility is that the fallen trunks still had their leaves.
-- 2021 (Recovery): here we see a shift in both the NDVI and fuzzy membership curves to the left, indicating a decrease in vegetation index values, particularly for forests. This may be due to salvage logging, leading to greater exposure of bare soil.
-- 2023 - 2025 (Recovery): the curves shift significantly to the right, indicating a recovery. However, we note that the distribution of the NDVI is bimodal, probably due to areas where vegetation has almost returned to its initial values and areas with slower recovery. The fuzzy membership confirms this, as we see a peak towards 1, but there is still a tail to the left.
+- 2017 (Pre-Vaia): the NDVI curve appears high and narrow, with a distinct peak around the value 0.85, while the fuzzy membership is positioned at 𝜇≈1. This seems to indicate a relatively homogeneous and mature forest cover prior to the disturbance event.
+- 2019 (Post-Vaia): NDVI values show a significant drop towards the 0.35–0.40 range, and the fuzzy distribution becomes noticeably flat. This shows that the forest structure was lost. What we see now is probably just a mix of bare earth and broken trees scattered across the area.
+- 2021 (Recovery): The data appear to show a persistence of low values or a slight shift to the left in both the NDVI and fuzzy membership, suggesting a slow recovery process. 
+- 2023 - 2025 (Recovery): The curves show a significant shift to the right, suggesting a clear recovery phase. The NDVI distribution is unimodal (centred on 0.65), which could indicate recolonisation throughout the area. Fuzzy membership confirms this progression.
+
+
+#  Area  of study: "Fiera di Primiero"
+
+<p align="center">
+  <img src="2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <b>2017</b>
+  <img src="2019-10-11-00_00_2019-10-11-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <b>2019</b>
+  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <b>2025</b>
+</p>    
+
+<p align="center">
+  <img src="RplotRGBfiera2017.png" width="25%" />
+  <img src="RplotRGBfiera2019.png" width="25%" /> 
+  <img src="RplotRGBfiera2021.png" width="25%" /> 
+  <img src="RplotRGBfiera2023.png" width="25%" /> 
+  <img src="RplotRGBfiera2025.png" width="25%" /> 
+</p>
+
+
+
+<p align="center">
+  <img src="Rplotareafiera.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="Rplot fiera fuzzy.png" width="45%" /> 
+</p> 
+
+<p align="center">
+  <img src="Rplot fiera NDVI.png" width="45%" /> 
+</p>
 
