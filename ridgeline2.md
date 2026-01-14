@@ -169,13 +169,15 @@ Here you can find the results, preceded by an image of the selected fixed area.
 # Interpretation of results
 
 Here, the graphs show some differences compared to the previous case of Val di Fiemme.
-- 2017 (Pre-Vaia): the NDVI curve appears high and narrow, with a distinct peak around the value 0.85, while the fuzzy membership is positioned at 𝜇≈1. This seems to indicate a relatively homogeneous and mature forest cover prior to the disturbance event.
+- 2017 (Pre-Vaia): the NDVI curve appears high and narrow, with a distinct peak around the value 0.85, while the fuzzy membership is positioned at 𝜇≈1. This seems to indicate a relatively homogeneous and mature forest cover before the disturbance event.
 - 2019 (Post-Vaia): NDVI values show a significant drop towards the 0.35–0.40 range, and the fuzzy distribution becomes noticeably flat. This shows that the forest structure was lost. What we see now is probably just a mix of bare earth and broken trees scattered across the area.
 - 2021 (Recovery): The data appear to show a persistence of low values or a slight shift to the left in both the NDVI and fuzzy membership, suggesting a slow recovery process. 
 - 2023 - 2025 (Recovery): The curves show a significant shift to the right, suggesting a clear recovery phase. The NDVI distribution is unimodal (centred on 0.65), which could indicate recolonisation throughout the area. Fuzzy membership confirms this progression.
 
 
 #  Area  of study: "Fiera di Primiero"
+
+The area is located in Fiera di Primiero, a town in the province of Trento, surrounded by wooded areas that were hit by a storm in 2018. 
 
 <p align="center">
   <img src="2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
@@ -186,6 +188,8 @@ Here, the graphs show some differences compared to the previous case of Val di F
   <b>2025</b>
 </p>    
 
+The false-colour images clearly show the structural collapse of the forest. In 2017, there is a continuous red image, which is then replaced by a large area of bare soil in 2019 due to the storm. In the following years (2021-2025), the persistence of cyan tones confirms the slow recovery of the tree layer, characterised by a gradual return to red/reddish tones. 
+
 <p align="center">
   <img src="RplotRGBfiera2017.png" width="25%" />
   <img src="RplotRGBfiera2019.png" width="25%" /> 
@@ -194,7 +198,9 @@ Here, the graphs show some differences compared to the previous case of Val di F
   <img src="RplotRGBfiera2025.png" width="25%" /> 
 </p>
 
+# Methodology and R implementation
 
+Here, I provide the area of interest that has been studied and the results.
 
 <p align="center">
   <img src="Rplotareafiera.png" width="80%" />
@@ -207,4 +213,12 @@ Here, the graphs show some differences compared to the previous case of Val di F
 <p align="center">
   <img src="Rplot fiera NDVI.png" width="45%" /> 
 </p>
+
+# Interpretation of results
+
+- 2017: both the NDVI curve and the fuzzy membership curve are unimodal, with the first one showing a peak around 0,75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
+- 2019: the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
+- 2021-2025: fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
+
+
 
