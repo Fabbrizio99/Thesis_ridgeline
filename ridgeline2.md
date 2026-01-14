@@ -216,9 +216,9 @@ Here, I provide the area of interest that has been studied and the results.
 
 # Interpretation of results
 
-- 2017: both the NDVI curve and the fuzzy membership curve are unimodal, with the first one showing a peak around 0,75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
-- 2019: the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
-- 2021-2025: fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
+- 2017(pre-Vaia): both the NDVI curve and the fuzzy membership curve are unimodal, with the first one showing a peak around 0,75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
+- 2019(post-Vaia): the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
+- 2021-2025(recovery): fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
 
 
 
