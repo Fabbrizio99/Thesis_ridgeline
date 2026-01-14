@@ -220,5 +220,37 @@ Here, I provide the area of interest that has been studied and the results.
 - 2019(post-Vaia): the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
 - 2021-2025(recovery): fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
 
+# Area of study: Vetriolo
 
+<p align="center">
+  <img src="2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <b>2017</b>
+  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <b>2019</b>
+  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <b>2025</b>
+</p>
 
+<p align="center">
+  <img src="RplotRGBvetriolo2017.png" width="25%" />
+  <img src="RplotRGBvetriolo2019.png" width="25%" /> 
+  <img src="RplotRGBvetriolo2021.png" width="25%" /> 
+  <img src="RplotRGBvetriolo2023.png" width="25%" /> 
+  <img src="RplotRGBvetriolo2025.png" width="25%" /> 
+</p>
+
+# Methodology and R implementation
+
+<p align="center">
+  <img src="Rplotareavetriolo.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="Rplotfuzzyvetriolo.png" width="45%" /> 
+</p> 
+
+<p align="center">
+  <img src="RplotNDVIvetriolo.png" width="45%" /> 
+</p>
+
+# Interpretation of results
