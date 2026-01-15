@@ -300,4 +300,4 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2019 (post-vaia): 
 - 2021-2025 (recover):
 
-# 6. Area of study: 
+# 6. Area of study: Redagno
