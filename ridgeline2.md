@@ -13,7 +13,7 @@ Using fuzzy logic in this model, each pixel is not a discrete class, but an ‘e
 
 - Value 1.0: represents the "Ideal forest" (full photosynthetic biomass); 
 - Value 0.0: represents the total absence of forest characteristics (bare soil, rock, or urban surfaces);  
-- Intermediate Values (0.2 - 0.7): Describe the typical heterogeneity of post-disturbance environments, characterised by fallen tree trunks, pioneer herbaceous vegetation and shrubs.
+- Intermediate Values (0.2 - 0.7): Describe the typical heterogeneity of post-disturbance environments, characterised by fallen tree trunks, pioneer herbaceous vegetation, and shrubs.
 
 The main objective of this analysis is to monitor the trajectory of forest recovery over time. 
 In this context, the identification of specific types of non-forest land cover, such as the distinction between bare soil or fallen dry logs, is secondary to the main objective. 
@@ -21,7 +21,7 @@ Instead, the focus is entirely on quantifying how close each pixel is to returni
 By using a continuous scale from 0 (non-forest) to 1 (full forest), we ensure that the resulting temporal visualisations, such as Ridgeline Plots, remain immediately intuitive: a shift to the right of the curve clearly signals forest regrowth. 
 Conversely, attempting to plot three or four distinct classes simultaneously would complicate interpretation.
 
-# 1. Ridgeline plots
+# Ridgeline plots
 
 Ridgeline graphs are partially overlapping line graphs that create the impression of a mountain range. They can be very useful for visualising changes in distributions over time or space.
 
@@ -37,7 +37,7 @@ library(ggridges)
 library(ggplot2)
 library(gtable)
 ```
-
+# 1. Area of study: Val di Fiemme
 <p align="center">
   <img src="2017 Val di Fiemme.jpg" width="35%" />
   <b>2017</b>
@@ -62,7 +62,7 @@ Ridgeline plots were used on two occasions:
 - for fuzzy membership;
 - for calculating the NDVI.
 
-# 2. Methodology and R implementation
+# Methodology and R implementation
 
 ## Phase 1: Spatial standardisation
 
@@ -122,13 +122,13 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
 ```
 <img src="RplotNDVI.png" width="100%" />
 
-# 3. Interpretation of results
+# Interpretation of results
 
 - 2017 (Pre-Vaia): A narrow, unimodal distribution peaking at 𝜇≈1, indicating high stability and forest homogeneity.
 - 2019 (Post-Vaia): a flattened, broad distribution. This reflects the collapse of the forest structure and the resulting heterogeneous landscape.
 - 2021-2025 (Recovery): The distribution gradually re-stabilises into a unimodal shape centred around 𝜇≈0.4 - 0.5. This indicates the establishment of a stable pioneer cover (shrubs/grasses), which has successfully stabilised the site even though the original arboreal biomass has not yet been restored.
 
-#  Area  of study: "Piana di Marcesina"
+# 2. Area  of study: "Piana di Marcesina"
 The Marcesina Plain is a vast plateau located in the north-eastern part of the "Altopiano dei Sette Comuni", between the province of Vicenza and the autonomous province of Trento.
 The landscape here suffered devastating damage, with thousands of hectares of forest felled (approximately 800,000 cubic metres of timber in the area alone) and a radically transformed area.
 
@@ -175,7 +175,7 @@ Here, the graphs show some differences compared to the previous case of Val di F
 - 2023 - 2025 (Recovery): The curves show a significant shift to the right, suggesting a clear recovery phase. The NDVI distribution is unimodal (centred on 0.65), which could indicate recolonisation throughout the area. Fuzzy membership confirms this progression.
 
 
-#  Area  of study: "Fiera di Primiero"
+# 3. Area  of study: "Fiera di Primiero"
 
 The area is located in Fiera di Primiero, a town in the province of Trento, surrounded by wooded areas that were hit by a storm in 2018. 
 
@@ -220,14 +220,14 @@ Here, I provide the area of interest that has been studied and the results.
 - 2019(post-Vaia): the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
 - 2021-2025(recovery): fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
 
-# Area of study: Vetriolo
+# 4. Area of study: Vetriolo
 
 <p align="center">
-  <img src="2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="truevetriolo2017.png" width="25%" />
   <b>2017</b>
-  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="truevetriolo2019.png" width="25%" />
   <b>2019</b>
-  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="truevetriolo2025.png" width="25%" />
   <b>2025</b>
 </p>
 
