@@ -133,11 +133,11 @@ The Marcesina Plain is a vast plateau located in the north-eastern part of the "
 The landscape here suffered devastating damage, with thousands of hectares of forest felled (approximately 800,000 cubic metres of timber in the area alone) and a radically transformed area.
 
 <p align="center">
-  <img src="2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L2A_True_color.jpg" width="25%" />
+  <img src="truemarcesina2017.jpg" width="25%" />
   <b>2017</b>
-  <img src="2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_True_color.jpg" width="25%" /> 
+  <img src="truemarcesina2019.jpg" width="25%" /> 
   <b>2019</b>
-  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.jpg" width="25%" /> 
+  <img src="truemarcesina2025.jpg" width="25%" /> 
   <b>2025</b>
 </p>
 
@@ -182,7 +182,7 @@ The area is located in Fiera di Primiero, a town in the province of Trento, surr
 <p align="center">
   <img src="2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
   <b>2017</b>
-  <img src="2019-10-11-00_00_2019-10-11-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
   <b>2019</b>
   <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
   <b>2025</b>
