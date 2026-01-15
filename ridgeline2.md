@@ -301,3 +301,41 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2021-2025 (recover):
 
 # 6. Area of study: Redagno
+
+<p align="center">
+  <img src="trueredagno2017.png" width="25%" />
+  <b>2017</b>
+  <img src="trueredagno2019.png" width="25%" />
+  <b>2019</b>
+  <img src="trueredagno2025.png" width="25%" />
+  <b>2025</b>
+</p>
+
+<p align="center">
+  <img src="RGBredagno2017.png" width="25%" />
+  <img src="RGBredagno2019.png" width="25%" /> 
+  <img src="RGBredagno2021.png" width="25%" /> 
+  <img src="RGBredagno2023.png" width="25%" /> 
+  <img src="RGBredagno2025.png" width="25%" /> 
+</p>
+
+# Methodology and R implementation
+
+Here you can find the results, preceded by an image of the selected fixed area.
+<p align="center">
+  <img src="arearedagno.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="fuzzyredagno.png" width="45%" /> 
+</p> 
+
+<p align="center">
+  <img src="NDVIredagno.png" width="45%" /> 
+</p>
+
+# Interpretation of results
+
+- 2017 (pre-vaia): 
+- 2019 (post-vaia): 
+- 2021-2025 (recover):
