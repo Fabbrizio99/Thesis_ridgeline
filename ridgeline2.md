@@ -180,11 +180,11 @@ Here, the graphs show some differences compared to the previous case of Val di F
 The area is located in Fiera di Primiero, a town in the province of Trento, surrounded by wooded areas that were hit by a storm in 2018. 
 
 <p align="center">
-  <img src="2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="truefiera2017.png" width="25%" />
   <b>2017</b>
-  <img src="2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="2019-10-11-00_00_2019-10-11-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
   <b>2019</b>
-  <img src="2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_True_color.png" width="25%" />
+  <img src="truefiera2025.png" width="25%" />
   <b>2025</b>
 </p>    
 
@@ -241,6 +241,7 @@ Here, I provide the area of interest that has been studied and the results.
 
 # Methodology and R implementation
 
+Here you can find the results, preceded by an image of the selected fixed area.
 <p align="center">
   <img src="Rplotareavetriolo.png" width="80%" />
 </p>
@@ -254,3 +255,7 @@ Here, I provide the area of interest that has been studied and the results.
 </p>
 
 # Interpretation of results
+
+- 2017 (pre-vaia): mature, healthy and homogeneous forest condition.
+- 2019 (post-vaia): the fuzzy curve is almost flat, and the NDVI values also decrease significantly after the fall.
+- 2021-2025 (recover): in both graphs, we see a gradual shift of the medians to the right year after year.
