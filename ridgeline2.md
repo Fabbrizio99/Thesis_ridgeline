@@ -259,3 +259,45 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2017 (pre-vaia): mature, healthy and homogeneous forest condition.
 - 2019 (post-vaia): the fuzzy curve is almost flat, and the NDVI values also decrease significantly after the fall.
 - 2021-2025 (recover): in both graphs, we see a gradual shift of the medians to the right year after year.
+
+# 5. Area of study: Varena
+
+<p align="center">
+  <img src="truevarena2017.png" width="25%" />
+  <b>2017</b>
+  <img src="truevarena2019.png" width="25%" />
+  <b>2019</b>
+  <img src="truevarena2025.png" width="25%" />
+  <b>2025</b>
+</p>
+
+<p align="center">
+  <img src="RGBvarena2017.png" width="25%" />
+  <img src="RGBvarena2019.png" width="25%" /> 
+  <img src="RGBvarena2021.png" width="25%" /> 
+  <img src="RGBvarena2023.png" width="25%" /> 
+  <img src="RGBvarena2025.png" width="25%" /> 
+</p>
+
+# Methodology and R implementation
+
+Here you can find the results, preceded by an image of the selected fixed area.
+<p align="center">
+  <img src="Areavarena.png" width="80%" />
+</p>
+
+<p align="center">
+  <img src="fuzzyvarena.png" width="45%" /> 
+</p> 
+
+<p align="center">
+  <img src="NDVIvarena.png" width="45%" /> 
+</p>
+
+# Interpretation of results
+
+- 2017 (pre-vaia): 
+- 2019 (post-vaia): 
+- 2021-2025 (recover):
+
+# 6. Area of study: 
