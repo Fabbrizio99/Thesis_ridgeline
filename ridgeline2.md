@@ -331,9 +331,9 @@ Here you can find the results, preceded by an image of the selected fixed area.
 
 # Interpretation of results
 
-- 2017 (pre-vaia): 
-- 2019 (post-vaia): 
-- 2021-2025 (recover):
+- 2017 (pre-vaia):  the area shows typical mature forest characteristics with high fuzzy membership 𝜇≈0.91 and a unimodal distribution.
+- 2019 (post-vaia): the impact is severe. The fuzzy mean drops to 0.247, indicating a transition to a predominantly non-forest state.
+- 2021-2025 (recover): between 2019 and 2021, the fuzzy mean barely moves (+0.021), and the NDVI remains stagnant. A significant recovery begins after 2021. The fuzzy mean jumps to 0.42 in 2023 and 0.53 in 2025. The curve shifts clearly to the right.
 
 ```{r, eval=F}
     Zona Anno NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
@@ -380,9 +380,9 @@ Here you can find the results, preceded by an image of the selected fixed area.
 
 # Interpretation of results
 
-- 2017 (pre-vaia): 
-- 2019 (post-vaia): 
-- 2021-2025 (recover):
+- 2017 (pre-vaia): mature forest with dense and homogeneous vegetation. Fuzzy mean of 0.996 and very low standard deviation (0.034)
+- 2019 (post-vaia): the mean drops from ~1.0 to 0.184 with a drastic reduction in forest cover.
+- 2021-2025 (recover): the strongest recovery is between 2021 and 2023, with the fuzzy average doubling from 0.32 to 0.60. This is followed by a slight regression or stagnation in 2025 (NDVI drops from 0.603 to 0.573).
 
 ```{r, eval=F}
      Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
