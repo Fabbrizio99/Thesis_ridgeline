@@ -124,9 +124,9 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
 
 # Interpretation of results
 
-- 2017 (Pre-Vaia): A narrow, unimodal distribution peaking at 𝜇≈1, indicating high stability and forest homogeneity.
-- 2019 (Post-Vaia): a flattened, broad distribution. This reflects the collapse of the forest structure and the resulting heterogeneous landscape.
-- 2021-2025 (Recovery): The distribution gradually re-stabilises into a unimodal shape centred around 𝜇≈0.4 - 0.5. This indicates the establishment of a stable pioneer cover (shrubs/grasses), which has successfully stabilised the site even though the original arboreal biomass has not yet been restored.
+- 2017 (Pre-Vaia): a narrow, unimodal fuzzy membership distribution peaking at 𝜇≈0.95, indicating high stability and forest homogeneity. Low standard deviation, also indicating a dense and mature canopy.
+- 2019 (Post-Vaia): a flattened, broad distribution. This reflects the collapse of the forest structure and the resulting heterogeneous landscape. Fuzzy mean crashes to 0.314. The NDVI standard deviation increases significantly from 0.082 to 0.134, indicating an increase in the heterogeneity of  the landscape.
+- 2021-2025 (Recovery): in 2021, the recovery is slower with a negative delta (-0.014). Then, the distribution gradually re-stabilises into a unimodal shape. The fuzzy mean settles at 0.658 in 2025. This indicates the establishment of a stable pioneer cover (shrubs/grasses), which has successfully stabilised the site even though the original arboreal biomass has not yet been restored.
 
 ```{r, eval=F}
            Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
@@ -178,10 +178,9 @@ Here you can find the results, preceded by an image of the selected fixed area.
 # Interpretation of results
 
 Here, the graphs show some differences compared to the previous case of Val di Fiemme.
-- 2017 (Pre-Vaia): the NDVI curve appears high and narrow, with a distinct peak around the value 0.85, while the fuzzy membership is positioned at 𝜇≈1. This seems to indicate a relatively homogeneous and mature forest cover before the disturbance event.
-- 2019 (Post-Vaia): NDVI values show a significant drop towards the 0.35–0.40 range, and the fuzzy distribution becomes noticeably flat. This shows that the forest structure was lost. What we see now is probably just a mix of bare earth and broken trees scattered across the area.
-- 2021 (Recovery): The data appear to show a persistence of low values or a slight shift to the left in both the NDVI and fuzzy membership, suggesting a slow recovery process. 
-- 2023 - 2025 (Recovery): The curves show a significant shift to the right, suggesting a clear recovery phase. The NDVI distribution is unimodal (centred on 0.65), which could indicate recolonisation throughout the area. Fuzzy membership confirms this progression.
+- 2017 (Pre-Vaia): the NDVI curve appears high and narrow, with a distinct peak around the value ≈0.85, while the fuzzy membership is positioned at 𝜇≈0.97. This seems to indicate a homogeneous and mature forest cover before the disturbance event.
+- 2019 (Post-Vaia): Marcesina suffered one of the most severe impacts. The Fuzzy Mean dropped dramatically to 0.222. NDVI values show a significant drop towards the 0.35–0.40 range, and the fuzzy distribution becomes noticeably flat. 
+- 2021 - 2025 (Recovery): The data appear to show a persistence of low values or a slight shift to the left in both the NDVI and fuzzy membership, suggesting a slow recovery process. Fuzzy mean rises to 0.465. Then the curves show a significant shift to the right, suggesting a clear recovery phase. The NDVI distribution is unimodal (centred on 0.65), and the fuzzy membership confirms this progression, reaching 0.716 in 2025. Standard deviation decreases over time.
 
 ```{r, eval=F}
                 Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
@@ -233,7 +232,7 @@ Here, I provide the area of interest that has been studied and the results.
 
 # Interpretation of results
 
-- 2017(pre-Vaia): both the NDVI curve and the fuzzy membership curve are unimodal, with the first one showing a peak around 0,75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
+- 2017(pre-Vaia): Both curves are unimodal, with the first one showing a peak around 0,75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
 - 2019(post-Vaia): the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
 - 2021-2025(recovery): fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
 
