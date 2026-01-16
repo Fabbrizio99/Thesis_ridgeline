@@ -1,4 +1,21 @@
-##### PACCHETTI
+CODE 
+
+#--------------------
+# Summary:
+# Packages
+# Import images
+# RGB images
+# Selection of the area
+# NDVI calculation
+# Fuzzy membership
+# Fuzzy ridgeline plot
+# NDVI ridgeline plot
+# Table
+#--------------------
+
+
+
+##### PACKAGES
 install.packages("terra")
 install.packages("raster")
 install.packages("imageRy")
@@ -15,28 +32,29 @@ library(gtable)
 # Working directory
 setwd("/Users/mattiafabris/Desktop/tesi magistrale/Val di fiemme")
 
-# Immagini
+# Images
 # 2017
-b4_17 <- rast("2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
-b8_17 <- rast("2017-10-06-00_00_2017-10-06-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
-
+b4_17 <- rast("2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
+b8_17 <- rast("2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
+b3_17 <- rast("2017-09-21-00_00_2017-09-21-23_59_Sentinel-2_L2A_B03_(Raw).tiff")
 # 2019
-b4_19 <- rast("2019-10-11-00_00_2019-10-11-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
-b8_19 <- rast("2019-10-11-00_00_2019-10-11-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
-
+b4_19 <- rast("2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
+b8_19 <- rast("2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
+b3_19 <- rast("2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_B03_(Raw).tiff")
 # 2021
-b4_21 <- rast("2021-10-20-00_00_2021-10-20-23_59_Sentinel-2_L2A_B04_(Raw).tiff") 
-b8_21 <- rast("2021-10-20-00_00_2021-10-20-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
-
+b4_21 <- rast("2021-10-10-00_00_2021-10-10-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
+b8_21 <- rast("2021-10-10-00_00_2021-10-10-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
+b3_21 <- rast("2021-10-10-00_00_2021-10-10-23_59_Sentinel-2_L2A_B03_(Raw).tiff")
 # 2023
 b4_23 <- rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
 b8_23 <- rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
-
+b3_23 <- rast("2023-09-10-00_00_2023-09-10-23_59_Sentinel-2_L2A_B03_(Raw).tiff")
 # 2025
 b4_25 <- rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_B04_(Raw).tiff")
 b8_25 <- rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_B08_(Raw).tiff")
+b3_25 <- rast("2025-09-19-00_00_2025-09-19-23_59_Sentinel-2_L2A_B03_(Raw).tiff")
 
-### Plot delle immagini dalle 3 bande (no area fissa perchè troppo piccola)
+### Plot RGB false-color (no area fissa perchè troppo piccola)
 # 2017
 b4_17t <- resample(b4_17, b8_17, method = "near")
 b3_17t <- resample(b3_17, b8_17, method = "near")
@@ -63,24 +81,37 @@ b3_25t <- resample(b3_25, b8_25, method = "near")
 stack25 <- c(b8_25, b4_25t, b3_25t)
 im.plotRGB(stack25,r = 1, g = 2, b = 3, title = "RGB 2025")
 
-# Selezione dell'area di 500m^2 partendo da un punto a scelta
+# Area selection (500m x 500m)
 
-plot(b4_19)
+# selection of the center
+true2019 <- rast("2019-09-21-00_00_2019-09-21-23_59_Sentinel-2_L2A_True_color.tiff")
+plotRGB(true2019, r=1, g=2, b=3, stretch="lin")
 
-punto <- draw(n=1) 
+punto <- click(true2019, n=1, xy=TRUE) 
+# coordinates
+centro_x <- punto$x
+centro_y <- punto$y
 
-offset <- 0.0022 
-centro_x <- punto[1] 
-centro_y <- punto[3]
-area_fissa <- ext(centro_x - offset, centro_x + offset, centro_y - offset, centro_y + offset)
+# Dimension
+lato_metri <- 500
+raggio_metri <- lato_metri / 2  
 
-# salvo le coordinate dell'area fissa
-area_fissa <- ext(cx - offset, cx + offset, cy - offset, cy + offset)
+# Constant: 1 degree of latitude is approximately 111.132 m
+meters_per_deg_lat <- 111132
+offset_lat <- raggio_metri / meters_per_deg_lat
+# Formula: Raggio / (111132 * coseno(latitudine in radianti))
+offset_lon <- raggio_metri / (meters_per_deg_lat * cos(centro_y * pi / 180))
+
+area_fissa <- ext(centro_x - offset_lon, centro_x + offset_lon, 
+                  centro_y - offset_lat, centro_y + offset_lat)
+
+# To verify, visualise, and save the extent
 print(area_fissa)
-area_fissa <- ext(11.5405294070109, 11.5449294070109, 46.2561922332979, 46.2605922332979)
+area_fissa<-ext(11.4101820189406, 11.4166991679661, 46.3394395591159, 46.3439387132749)
+plotRGB(true2019, r=1, g=2, b=3, stretch="lin")
+plot(area_fissa, add=TRUE, border="red", col=NA, lwd=1) 
 
-# Calcolo gli ndvi degli anni 
-# Crop con area fissa 
+# NDVI calculation within the fixed area 
 ndvi17f <- (crop(b8_17, area_fissa) - crop(b4_17, area_fissa)) / (crop(b8_17, area_fissa) + crop(b4_17, area_fissa))
 ndvi19f <- (crop(b8_19, area_fissa) - crop(b4_19, area_fissa)) / (crop(b8_19, area_fissa) + crop(b4_19, area_fissa))
 ndvi21f <- (crop(b8_21, area_fissa) - crop(b4_21, area_fissa)) / (crop(b8_21, area_fissa) + crop(b4_21, area_fissa))
@@ -99,13 +130,13 @@ mem25f <- clamp((ndvi25f - 0.3) / (0.8 - 0.3), 0, 1)
 # DATAFRAME 
 df17f <- as.data.frame(mem17f, xy=FALSE); colnames(df17f)[1] <- "membership"; df17f$stato <- "1. 2017 (Pre-Vaia)"
 df19f <- as.data.frame(mem19f, xy=FALSE); colnames(df19f)[1] <- "membership"; df19f$stato <- "2. 2019 (Post-Vaia)"
-df21f <- as.data.frame(mem21f, xy=FALSE); colnames(df21f)[1] <- "membership"; df21f$stato <- "3. 2021 (Recupero)"
-df23f <- as.data.frame(mem23f, xy=FALSE); colnames(df23f)[1] <- "membership"; df23f$stato <- "4. 2023 (Recupero)"
-df25f <- as.data.frame(mem25f, xy=FALSE); colnames(df25f)[1] <- "membership"; df25f$stato <- "5. 2025 (Recupero)"
-# Uniamo tutto
+df21f <- as.data.frame(mem21f, xy=FALSE); colnames(df21f)[1] <- "membership"; df21f$stato <- "3. 2021 (Recover)"
+df23f <- as.data.frame(mem23f, xy=FALSE); colnames(df23f)[1] <- "membership"; df23f$stato <- "4. 2023 (Recover)"
+df25f <- as.data.frame(mem25f, xy=FALSE); colnames(df25f)[1] <- "membership"; df25f$stato <- "5. 2025 (Recover)"
+
 df_totale <- rbind(df17f, df19f, df21f, df23f, df25f)
 
-# RIDGELINE PLOT FUZZY 
+# 1. RIDGELINE PLOT FUZZY 
 ggplot(df_totale, aes(x = membership, y = stato, fill = stato)) +
   geom_density_ridges(alpha = 0.7, quantile_lines = TRUE, quantiles = 2, scale = 1.2) +
   theme_minimal() +
@@ -129,17 +160,17 @@ df_nd19$stato <- "2. 2019 (Post-Vaia)"
 # 2021
 df_nd21 <- as.data.frame(ndvi21f, xy=FALSE)
 colnames(df_nd21)[1] <- "ndvi_value"
-df_nd21$stato <- "3. 2021 (Recupero)"
+df_nd21$stato <- "3. 2021 (Recover)"
 
 # 2023
 df_nd23 <- as.data.frame(ndvi23f, xy=FALSE)
 colnames(df_nd23)[1] <- "ndvi_value"
-df_nd23$stato <- "4. 2023 (Recupero)"
+df_nd23$stato <- "4. 2023 (Recover)"
 
 # 2025
 df_nd25 <- as.data.frame(ndvi25f, xy=FALSE)
 colnames(df_nd25)[1] <- "ndvi_value"
-df_nd25$stato <- "5. 2025 (Recupero)"
+df_nd25$stato <- "5. 2025 (Recover)"
 
 df_ndvi_totale <- rbind(df_nd17, df_nd19, df_nd21, df_nd23, df_nd25)
 
@@ -152,29 +183,51 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
        x = "NDVI value (-1 to 1)",
        y = NULL) +
       xlim(-0.2, 1)
-##### Fuzzy senza soglie
-mem17_raw <- clamp(ndvi17f, 0, 1)
-mem19_raw <- clamp(ndvi19f, 0, 1)
-mem21_raw <- clamp(ndvi21f, 0, 1)
-mem23_raw <- clamp(ndvi23f, 0, 1)
-mem25_raw <- clamp(ndvi25f, 0, 1)
+
+# Statistics table
+
+nome_zona <- "Redagno" 
+
+# Function for calculations
+calcola_stats <- function(raster_obj, anno) {
+  valori <- values(raster_obj, mat = FALSE) 
+  valori <- valori[!is.na(valori)] 
+  
+  return(c(
+    Media = mean(valori),
+    SD = sd(valori),
+    Min = min(valori),
+    Max = max(valori),
+    Anno = anno
+  ))
+}
+
+# NDVI
+stats_17 <- calcola_stats(ndvi17f, 2017)
+stats_19 <- calcola_stats(ndvi19f, 2019)
+stats_21 <- calcola_stats(ndvi21f, 2021)
+stats_23 <- calcola_stats(ndvi23f, 2023)
+stats_25 <- calcola_stats(ndvi25f, 2025)
 
 # Dataframe
-df17r <- as.data.frame(mem17_raw, xy=FALSE); colnames(df17r)[1] <- "membership"; df17r$stato <- "1. 2017 (Pre-Vaia)"
-df19r <- as.data.frame(mem19_raw, xy=FALSE); colnames(df19r)[1] <- "membership"; df19r$stato <- "2. 2019 (Post-Vaia)"
-df21r <- as.data.frame(mem21_raw, xy=FALSE); colnames(df21r)[1] <- "membership"; df21r$stato <- "3. 2021 (Recupero)"
-df23r <- as.data.frame(mem23_raw, xy=FALSE); colnames(df23r)[1] <- "membership"; df23r$stato <- "4. 2023 (Recupero)"
-df25r <- as.data.frame(mem25_raw, xy=FALSE); colnames(df25r)[1] <- "membership"; df25r$stato <- "5. 2025 (Recupero)"
+tabella_sintesi <- data.frame(
+  Area = rep(nome_zona, 5),
+  year = c(2017, 2019, 2021, 2023, 2025),
+  NDVI_Mean = c(stats_17["Media"], stats_19["Media"], stats_21["Media"], stats_23["Media"], stats_25["Media"]),
+  NDVI_SD = c(stats_17["SD"], stats_19["SD"], stats_21["SD"], stats_23["SD"], stats_25["SD"]),
+  Fuzzy_Mean = c(global(mem17f, "mean", na.rm=TRUE)[1,1], 
+                 global(mem19f, "mean", na.rm=TRUE)[1,1],
+                 global(mem21f, "mean", na.rm=TRUE)[1,1],
+                 global(mem23f, "mean", na.rm=TRUE)[1,1],
+                 global(mem25f, "mean", na.rm=TRUE)[1,1])
+)
 
 
-df_totale_raw <- rbind(df17r, df19r, df21r, df23r, df25r)
+# Delta compared to 2019
+valore_danno_2019 <- tabella_sintesi$NDVI_Mean[2]
+tabella_sintesi$Delta_vs_2019 <- tabella_sintesi$NDVI_Mean - valore_danno_2019
+is.num <- sapply(tabella_sintesi, is.numeric)
+tabella_sintesi[is.num] <- lapply(tabella_sintesi[is.num], round, 3)
 
-# Plot senza soglie
-ggplot(df_totale_raw, aes(x = membership, y = stato, fill = stato)) +
-  geom_density_ridges(alpha = 0.7, quantile_lines = TRUE, quantiles = 2, scale = 1.2) +
-  theme_minimal() +
-  labs(title = "Fuzzy Membership",
-       x = "Membership (NDVI)",
-       y = NULL) +
-  xlim(0, 1)
-
+# Visualisation
+print(tabella_sintesi)
