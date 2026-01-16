@@ -300,6 +300,15 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2019 (post-vaia): 
 - 2021-2025 (recover):
 
+```{r, eval=F}
+    Zona Anno NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
+1 Varena 2017     0.778   0.094      0.914         0.356
+2 Varena 2019     0.422   0.092      0.247         0.000
+3 Varena 2021     0.432   0.087      0.268         0.010
+4 Varena 2023     0.510   0.097      0.421         0.088
+5 Varena 2025     0.569   0.086      0.538         0.147
+```
+
 # 6. Area of study: Redagno
 
 <p align="center">
