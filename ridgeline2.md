@@ -7,18 +7,18 @@ Output: html_document
 
 # Introduction
 The classic analysis of land cover is based on Boolean logic, in which a pixel categorically belongs to a class (e.g., 1 for “Forest”, 0 for “Non-Forest”). 
-However, natural ecosystems, especially after severe disturbances such as Storm Vaia in 2018 (HERE I MAY ADD), present ecological gradients and blurred transitions.
+However, natural ecosystems, especially after severe disturbances such as Storm Vaia in 2018, present ecological gradients and blurred transitions.
 
 Using fuzzy logic in this model, each pixel is not a discrete class, but an ‘empirical model of reality’ with a degree of membership (𝜇) continuous between 0 and 1.
 
 - Value 1.0: represents the "Ideal forest" (full photosynthetic biomass); 
 - Value 0.0: represents the total absence of forest characteristics (bare soil, rock, or urban surfaces);  
-- Intermediate Values (0.2 - 0.7): Describe the typical heterogeneity of post-disturbance environments, characterised by fallen tree trunks, pioneer herbaceous vegetation, and shrubs.
+- Intermediate values (0.2 - 0.7): describe the typical heterogeneity of post-disturbance environments, characterised by fallen tree trunks, pioneer herbaceous vegetation, and shrubs.
 
 The main objective of this analysis is to monitor the trajectory of forest recovery over time. 
 In this context, the identification of specific types of non-forest land cover, such as the distinction between bare soil or fallen dry logs, is secondary to the main objective. 
 Instead, the focus is entirely on quantifying how close each pixel is to returning to a functional forest state. 
-By using a continuous scale from 0 (non-forest) to 1 (full forest), we ensure that the resulting temporal visualisations, such as Ridgeline Plots, remain immediately intuitive: a shift to the right of the curve clearly signals forest regrowth. 
+By using a continuous scale from 0 (non-forest) to 1 (full forest), we ensure that the resulting temporal visualisations, such as Ridgeline plots, remain immediately intuitive: a shift to the right of the curve clearly signals forest regrowth. 
 Conversely, attempting to plot three or four distinct classes simultaneously would complicate interpretation.
 
 # Ridgeline plots
@@ -232,9 +232,9 @@ Here, I provide the area of interest that has been studied and the results.
 
 # Interpretation of results
 
-- 2017(pre-Vaia): Both curves are unimodal, with the first one showing a peak around 0,75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
-- 2019(post-Vaia): the distribution becomes wider in the fuzzy curve, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0,5.
-- 2021-2025(recovery): fuzzy curves are still flat, but quantiles are shifting towards the right. NDVI curves also show the same behaviour with the formation of a higher peak around 0,6. This is due to the recovery of vegetative coverage. 
+- 2017(pre-Vaia): both curves are unimodal, with the first one showing a peak around 0.75 and the second one around 𝜇≈1; the tail is wider here. This outlines a homogeneous and healthy forest.
+- 2019(post-Vaia): the distribution becomes wider in the fuzzy curve with a drop to 0.393, showing a big change in the structure of the forest. NDVI values drop to an almost unimodal curve with a peak around 0.5. High standard deviation confirms the fragmentation of the landscape.
+- 2021-2025(recovery): fuzzy curves are still flat, with progressive growth to 0.641. NDVI curves also show the same behaviour with the formation of a higher peak around 0.6.
 
 ```{r, eval=F}
                Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
@@ -281,9 +281,9 @@ Here you can find the results, preceded by an image of the selected fixed area.
 
 # Interpretation of results
 
-- 2017 (pre-vaia): mature, healthy and homogeneous forest condition.
-- 2019 (post-vaia): the fuzzy curve is almost flat, and the NDVI values also decrease significantly after the fall.
-- 2021-2025 (recover): in both graphs, we see a gradual shift of the medians to the right year after year.
+- 2017 (pre-vaia): the statistics describe a mature, healthy, and homogeneous forest condition, with a fuzzy mean of 0.939 and a high NDVI average (0.795). 
+- 2019 (post-vaia): the fuzzy curve flattens and the mean drops to 0.290. The standard deviation peaks at 0.136, highlighting the maximum point of heterogeneity after the windthrow.
+- 2021-2025 (recover): the data show a recovery trend. The delta increases linearly, reaching +0.202 in 2025. In 2025, the fuzzy mean reaches 0.687, and the standard deviation drops back to low levels (0.09).
 
 ```{r, eval=F}
       Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
@@ -391,3 +391,12 @@ Here you can find the results, preceded by an image of the selected fixed area.
 4 Redagno 2023     0.603   0.093      0.605         0.219
 5 Redagno 2025     0.573   0.090      0.546         0.190
 ```
+
+
+# Comparative conclusion
+
+By analyzing the six case studies with the fuzzy logic approach combined with the use of ridgeline plots, some conclusions can be drawn:
+
+- main trajectory of recovery: all cases follow a trend of recovery starting with a stable situation of mature and homogeneous forest, followed by a big collapse of the values right after the Vaia storm. This is followed by an ascent recovery trajectory.
+- We have different velocities of recovery between sites: areas like Marcesina and Vetriolo showed a steady, linear progression from 2019 to 2025; Varena, instead, exhibited a latency phase with growth starting from 2021, followed by acceleration. Redagno showed the most dramatic crash but also the fastest initial regrowth rate between 2021 and 2023.
+- No area has returned to its pre-storm state. 
