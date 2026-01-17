@@ -16,10 +16,12 @@ Using fuzzy logic in this model, each pixel is not a discrete class, but an ‘e
 - Intermediate values (0.2 - 0.7): describe the typical heterogeneity of post-disturbance environments, characterised by fallen tree trunks, pioneer herbaceous vegetation, and shrubs.
 
 The main objective of this analysis is to monitor the trajectory of forest recovery over time. 
-In this context, the identification of specific types of non-forest land cover, such as the distinction between bare soil or fallen dry logs, is secondary to the main objective. 
+In this context, the identification of specific types of non-forest land cover, such as distinguishing between bare soil and fallen dry logs, is secondary to the main objective. 
 Instead, the focus is entirely on quantifying how close each pixel is to returning to a functional forest state. 
 By using a continuous scale from 0 (non-forest) to 1 (full forest), we ensure that the resulting temporal visualisations, such as Ridgeline plots, remain immediately intuitive: a shift to the right of the curve clearly signals forest regrowth. 
 Conversely, attempting to plot three or four distinct classes simultaneously would complicate interpretation.
+
+All images used were taken between September and mid-October to ensure data comparability and avoid variations in spectral parameters linked to phenology. This prevents differences in NDVI values due to seasonality, allowing differences to be attributed to post-disturbance recovery dynamics.
 
 # Ridgeline plots
 
