@@ -131,12 +131,13 @@ ggplot(df_ndvi_totale, aes(x = ndvi_value, y = stato, fill = stato)) +
 - 2021-2025 (Recovery): in 2021, the recovery is slower with a negative delta (-0.014). Then, the distribution gradually re-stabilises into a unimodal shape. The fuzzy mean settles at 0.658 in 2025. This indicates the establishment of a stable pioneer cover (shrubs/grasses), which has successfully stabilised the site even though the original arboreal biomass has not yet been restored.
 
 ```{r, eval=F}
-           Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
-1 Val di Fiemme 2017     0.815   0.082      0.951         0.361
-2 Val di Fiemme 2019     0.455   0.134      0.317         0.000
-3 Val di Fiemme 2021     0.441   0.119      0.289        -0.014
-4 Val di Fiemme 2023     0.632   0.112      0.658         0.177
-5 Val di Fiemme 2025     0.630   0.102      0.658         0.175
+           Area year NDVI_Mean NDVI_SD Fuzzy_Mean Fuzzy_SD Delta_vs_2019
+1 Val di Fiemme 2017     0.815   0.082      0.951    0.117         0.361
+2 Val di Fiemme 2019     0.455   0.134      0.317    0.252         0.000
+3 Val di Fiemme 2021     0.441   0.119      0.289    0.222        -0.014
+4 Val di Fiemme 2023     0.632   0.112      0.658    0.212         0.177
+5 Val di Fiemme 2025     0.630   0.102      0.658    0.195         0.175
+
 ```
 
 # 2. Area  of study: "Piana di Marcesina"
@@ -185,12 +186,12 @@ Here, the graphs show some differences compared to the previous case of Val di F
 - 2021 - 2025 (Recovery): The data appear to show a persistence of low values or a slight shift to the left in both the NDVI and fuzzy membership, suggesting a slow recovery process. Fuzzy mean rises to 0.465. Then the curves show a significant shift to the right, suggesting a clear recovery phase. The NDVI distribution is unimodal (centred on 0.65), and the fuzzy membership confirms this progression, reaching 0.716 in 2025. Standard deviation decreases over time.
 
 ```{r, eval=F}
-                Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
-1 Piana di Marcesina 2017     0.845   0.069      0.971         0.435
-2 Piana di Marcesina 2019     0.410   0.090      0.222         0.000
-3 Piana di Marcesina 2021     0.533   0.071      0.465         0.123
-4 Piana di Marcesina 2023     0.641   0.061      0.680         0.230
-5 Piana di Marcesina 2025     0.659   0.056      0.716         0.249
+                Area year NDVI_Mean NDVI_SD Fuzzy_Mean Fuzzy_SD Delta_vs_2019
+1 Piana di Marcesina 2017     0.845   0.069      0.971    0.092         0.435
+2 Piana di Marcesina 2019     0.410   0.090      0.222    0.177         0.000
+3 Piana di Marcesina 2021     0.533   0.071      0.465    0.138         0.123
+4 Piana di Marcesina 2023     0.641   0.061      0.680    0.121         0.230
+5 Piana di Marcesina 2025     0.659   0.056      0.716    0.106         0.249
 ```
 
 # 3. Area  of study: "Fiera di Primiero"
@@ -239,12 +240,12 @@ Here, I provide the area of interest that has been studied and the results.
 - 2021-2025(recovery): fuzzy curves are still flat, with progressive growth to 0.641. NDVI curves also show the same behaviour with the formation of a higher peak around 0.6.
 
 ```{r, eval=F}
-               Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
-1 Fiera di Primiero 2017     0.750   0.083      0.885         0.253
-2 Fiera di Primiero 2019     0.496   0.112      0.393         0.000
-3 Fiera di Primiero 2021     0.584   0.127      0.566         0.088
-4 Fiera di Primiero 2023     0.598   0.129      0.592         0.102
-5 Fiera di Primiero 2025     0.624   0.115      0.641         0.128
+               Area year NDVI_Mean NDVI_SD Fuzzy_Mean Fuzzy_SD Delta_vs_2019
+1 Fiera di Primiero 2017     0.750   0.083      0.885    0.153         0.253
+2 Fiera di Primiero 2019     0.496   0.112      0.393    0.223         0.000
+3 Fiera di Primiero 2021     0.584   0.127      0.566    0.244         0.088
+4 Fiera di Primiero 2023     0.598   0.129      0.592    0.247         0.102
+5 Fiera di Primiero 2025     0.624   0.115      0.641    0.211         0.128
 ```
 
 # 4. Area of study: Vetriolo
@@ -288,12 +289,12 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2021-2025 (recover): the data show a recovery trend. The delta increases linearly, reaching +0.202 in 2025. In 2025, the fuzzy mean reaches 0.687, and the standard deviation drops back to low levels (0.09).
 
 ```{r, eval=F}
-      Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
-1 Vetriolo 2017     0.795   0.089      0.939         0.353
-2 Vetriolo 2019     0.441   0.136      0.290         0.000
-3 Vetriolo 2021     0.526   0.105      0.453         0.085
-4 Vetriolo 2023     0.593   0.097      0.588         0.152
-5 Vetriolo 2025     0.644   0.090      0.687         0.202
+      Area year NDVI_Mean NDVI_SD Fuzzy_Mean Fuzzy_SD Delta_vs_2019
+1 Vetriolo 2017     0.795   0.089      0.939    0.150         0.353
+2 Vetriolo 2019     0.441   0.136      0.290    0.261         0.000
+3 Vetriolo 2021     0.526   0.105      0.453    0.209         0.085
+4 Vetriolo 2023     0.593   0.097      0.588    0.191         0.152
+5 Vetriolo 2025     0.644   0.090      0.687    0.176         0.202
 ```
 
 # 5. Area of study: Varena
@@ -337,12 +338,12 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2021-2025 (recover): between 2019 and 2021, the fuzzy mean barely moves (+0.021), and the NDVI remains stagnant. A significant recovery begins after 2021. The fuzzy mean jumps to 0.42 in 2023 and 0.53 in 2025. The curve shifts clearly to the right.
 
 ```{r, eval=F}
-    Zona Anno NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
-1 Varena 2017     0.778   0.094      0.914         0.356
-2 Varena 2019     0.422   0.092      0.247         0.000
-3 Varena 2021     0.432   0.087      0.268         0.010
-4 Varena 2023     0.510   0.097      0.421         0.088
-5 Varena 2025     0.569   0.086      0.538         0.147
+    Area year NDVI_Mean NDVI_SD Fuzzy_Mean Fuzzy_SD Delta_vs_2019
+1 Varena 2017     0.778   0.094      0.914    0.160         0.356
+2 Varena 2019     0.422   0.092      0.247    0.179         0.000
+3 Varena 2021     0.432   0.087      0.268    0.166         0.010
+4 Varena 2023     0.510   0.097      0.421    0.191         0.088
+5 Varena 2025     0.569   0.086      0.538    0.170         0.147
 ```
 
 # 6. Area of study: Redagno
@@ -386,12 +387,12 @@ Here you can find the results, preceded by an image of the selected fixed area.
 - 2021-2025 (recover): the strongest recovery is between 2021 and 2023, with the fuzzy average doubling from 0.32 to 0.60. This is followed by a slight regression or stagnation in 2025 (NDVI drops from 0.603 to 0.573).
 
 ```{r, eval=F}
-     Area year NDVI_Mean NDVI_SD Fuzzy_Mean Delta_vs_2019
-1 Redagno 2017     0.862   0.034      0.996         0.479
-2 Redagno 2019     0.383   0.114      0.184         0.000
-3 Redagno 2021     0.459   0.107      0.320         0.076
-4 Redagno 2023     0.603   0.093      0.605         0.219
-5 Redagno 2025     0.573   0.090      0.546         0.190
+     Area year NDVI_Mean NDVI_SD Fuzzy_Mean Fuzzy_SD Delta_vs_2019
+1 Redagno 2017     0.862   0.034      0.996    0.032         0.479
+2 Redagno 2019     0.383   0.114      0.184    0.207         0.000
+3 Redagno 2021     0.459   0.107      0.320    0.206         0.076
+4 Redagno 2023     0.603   0.093      0.605    0.185         0.219
+5 Redagno 2025     0.573   0.090      0.546    0.176         0.190
 ```
 
 
