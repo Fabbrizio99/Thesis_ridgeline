@@ -1,13 +1,14 @@
 \documentclass{article} 
 
 \usepackage{graphicx} 
-\usepackage{hyperref}
 \usepackage{natbib}
 \usepackage[T1]{fontenc}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{placeins}
 \usepackage[round]{natbib}
+\usepackage{xurl}
+\usepackage{hyperref}
 \title{\Huge{Tracking forest recovery after Vaia: a Fuzzy logic approach with Ridgeline plots}} 
 \author{Fabris Mattia }
 
@@ -63,14 +64,10 @@ Disastrous events such as Vaia not only cause damage to forests but also have ma
 
  The study conducted by Costa et al. (2021) seeks to understand how the interactions of natural disturbances interface with the multifunctionality of mountain forests. Specifically, they demonstrate how, in the immediate aftermath of the storm, through simulations of rockfalls along a slope affected by Vaia, the effectiveness of forest protection increases compared to the previous forest. This is because biological legacies (mainly dead wood on the ground) increase the roughness of the surface, creating a positive barrier effect.   
 
- 
+ However, the dynamics are different when it comes to slope stability (surface landslides). Although the root system of dead trees maintains a residual soil cohesion capacity for several years before degrading, the removal of timber through salvage logging can accelerate erosion due to mechanical disturbance of the soil \cite{Lindenmayer2006}. 
 
-However, the dynamics are different when it comes to slope stability (surface landslides). Although the root system of dead trees maintains a residual soil cohesion capacity for several years before degrading, the removal of timber through salvage logging can accelerate erosion due to mechanical disturbance of the soil \cite{Lindenmayer2006}. 
-
+ A fundamental concept in this case is the protection gap, which is defined as the period of time during which the protective function of the forest against natural hazards (avalanches, rockfalls) is compromised or insufficient. The work of Costa et al. (2021) shows that this should be the main target in forest management strategies. 
  
-A fundamental concept in this case is the protection gap, which is defined as the period of time during which the protective function of the forest against natural hazards (avalanches, rockfalls) is compromised or insufficient. The work of Costa et al. (2021) shows that this should be the main target in forest management strategies. 
- 
-
 In this context, maintaining wood on the ground not only protects human infrastructure but also helps to close this gap by protecting regeneration itself. As highlighted by Piazza et al. (2024), structural complexity on the ground creates protected micro-sites that defend young seedlings from snow movement and ungulates, promoting the establishment of new forest. This reduces the protection gap, which is avoided until the dead wood degrades and the regeneration that has taken place at the same time is exposed. For this reason, it is suggested that the removal of logs on the ground increases the exposure of infrastructure to risks related to rockfalls because the protective effect is eliminated \cite{Costa2021}.
 
 \subsection{Remote sensing for forest monitoring}
@@ -159,9 +156,9 @@ All the images used were taken between September and mid-October (see Table 2 fo
     \label{tab:acquisition_dates}
 \end{table}
 
-\subsection{Theoretical approach: from Boolean logic to fuzzy logic }
+\subsection{Theoretical approach: from Boolean logic to Fuzzy logic }
 The study of land cover is generally based on Boolean logic, in which pixels are assigned a categorical membership (e.g., 1 for “forest,” 0 for “non-forest”). However, following disturbances such as Vaia, natural ecosystems present complex ecological gradients and transition zones that cannot be accurately described by binary classifications \citep{Rocchini2010, Giupponi2023}.   
-For this reason, the model developed in this study uses fuzzy logic. This approach allows a degree of membership $\mu$, continuous between 0 and 1, to be assigned to each pixel.  
+For this reason, the model developed in this study uses Fuzzy logic. This approach allows a degree of membership $\mu$, continuous between 0 and 1, to be assigned to each pixel.  
 
 \begin{itemize}
     \item Value $\mu$ = 1: represents the “ideal forest,” with high photosynthetic biomass and a closed canopy. 
@@ -618,6 +615,9 @@ While the integration of Fuzzy logic and Ridgeline plots provided significant in
 
 A second limitation concerns the validation of the fuzzy model. The fuzzy membership degrees and the interpretation of the spatial heterogeneity were derived entirely from satellite spectral distributions and supported by existing literature. Although robust, this approach currently lacks extensive in-situ ground-truthing, which is a critical step for verifying spatial distribution models \cite{Romero2023}. Field-based validations—such as measuring seedling density, actual tree height, and species composition within permanent sampling plots—would be necessary to strictly calibrate the Fuzzy thresholds and definitively link specific mathematical values to precise ecological states on the ground \cite{White2022}.
 
+\section*{Data and code}
+Findable, accessible, interoperable and reusable (FAIR) data was used in my thesis, which can be consulted at the following link \url{10.5281/zenodo.18662221}. It is also possible to view details of the R code implemented for data analysis at the link \url{https://github.com/Fabbrizio99/Thesis_ridgeline/blob/main/ridgeline2.md}.
+
 \begin{thebibliography}{999}
 
 \bibitem[Chirici et al. 2019]{Chirici2019} 
@@ -627,33 +627,31 @@ A second limitation concerns the validation of the fuzzy model. The fuzzy member
 \bibitem[Marangon et al. 2024]{Marangon2024}
     Marangon D., Betetto C., Wohlgemuth T., Cadez L., Alberti G., Tomelleri E., Lingua E. (2024), Impact of salvage logging on short-term natural regeneration in montane forests of the Alps after large windthrow events, in «Forest Ecology and Management», 567, 122085. https://doi.org/10.1016/j.foreco.2024.122085 
 \bibitem[Franklin et al. 2000]{Franklin2000}
-    Franklin J.F., Lindenmayer D., MacMahon J.A., McKee A., Magnuson J., Perry D.A., Waide R., Foster D. (2000), Threads of Continuity, in «Conservation Biology in Practice», 1(1), pp. 8-16.
+    Franklin, J.F. & Lindenmayer, David & Macmahon, J.A. & McKee, A. & Magnusson, J. & Perry, David & Waide, Robert & Foster, David. (2000). Threads of continuity: Ecosystem disturbances, biological legacies and ecosystem recovery. Conservation Biology in Practice. 1. 8-16. \url{https://www.researchgate.net/publication/304347496_Threads_of_continuity_Ecosystem_disturbances_biological_legacies_and_ecosystem_recovery}
 \bibitem[Giupponi et al. 2023]{Giupponi2023} 
-    Giupponi, L.; Leoni, V.; Pedrali, D.; Giorgi, A. Restoration of Vegetation Greenness and Possible Changes in Mature Forest Communities in Two Forests Damaged by the Vaia Storm in Northern Italy. Plants 2023, 12, 1369. https://doi.org/10.3390/ plants12061369  
+    Giupponi, L.; Leoni, V.; Pedrali, D.; Giorgi, A. Restoration of Vegetation Greenness and Possible Changes in Mature Forest Communities in Two Forests Damaged by the Vaia Storm in Northern Italy. Plants 2023, 12, 1369. https://doi.org/10.3390/plants12061369  
 \bibitem[Piazza et al. 2024]{Piazza2024}
-    Piazza N., Bebi P., Vacchiano G., Rigling A., Wohlgemuth T., Bottero A. (2024), Post-windthrow forest development in spruce-dominated mountain forests in Central Europe, in «Forest Ecology and Management», 561, pp. 1-13 
+    Piazza N., Bebi P., Vacchiano G., Rigling A., Wohlgemuth T., Bottero A. (2024), Post-windthrow forest development in spruce-dominated mountain forests in Central Europe, in «Forest Ecology and Management», 561, pp. 1-13. https://doi.org/10.1016/j.foreco.2024.121884 
 \bibitem[Gazzea et al. 2025]{Gazzea2025}
-    Gazzea E., Conti L., Rossi E., Cerretti P., Mei M., Paniccia D., Battisti A., Marini L. (2025), High Temporal Beta-Diversity of Pollinators in Early Successional Forests After Windthrow, in «Ecology and Evolution», 15, e71571, DOI: 10.1002/ece3.71571
+    Gazzea E., Conti L., Rossi E., Cerretti P., Mei M., Paniccia D., Battisti A., Marini L. (2025), High Temporal Beta-Diversity of Pollinators in Early Successional Forests After Windthrow, in «Ecology and Evolution», 15, e71571, https://doi.org/10.1002/ece3.71571 
 \bibitem[Lindenmayer \& Noss 2006]{Lindenmayer2006}
-    Lindenmayer D.B., Noss R.F. (2006), Salvage Logging, Ecosystem Processes, and Biodiversity Conservation, in «Conservation Biology», 20(4), pp. 949-958.
+    Lindenmayer D.B., Noss R.F. (2006), Salvage Logging, Ecosystem Processes, and Biodiversity Conservation, in «Conservation Biology», 20(4), pp. 949-958. https://doi.org/10.1111/j.1523-1739.2006.00497.x
 \bibitem[Costa et al. 2021]{Costa2021}
-    Costa,M.;Marchi,N.; Bettella, F.; Bolzon, P.; Berger, F.; Lingua, E. Biological Legacies and Rockfall: The Protective Effect of a Windthrown Forest. Forests 2021, 12, 1141. https://doi.org/10.3390/ f12091141  
+    Costa,M.;Marchi,N.; Bettella, F.; Bolzon, P.; Berger, F.; Lingua, E. Biological Legacies and Rockfall: The Protective Effect of a Windthrown Forest. Forests 2021, 12, 1141. https://doi.org/10.3390/f12091141  
 \bibitem[Piragnolo et al. 2021]{Piragnolo2021}
-    Piragnolo,M.;Pirotti,F.; Zanrosso, C.; Lingua, E.; Grigolato, S. Responding to Large-Scale Forest Damage in an Alpine Environment with Remote Sensing, Machine Learning, and Web-GIS. Remote Sens. 2021,13,1541. https://doi.org/ 10.3390/rs13081541  
+    Piragnolo,M.;Pirotti,F.; Zanrosso, C.; Lingua, E.; Grigolato, S. Responding to Large-Scale Forest Damage in an Alpine Environment with Remote Sensing, Machine Learning, and Web-GIS. Remote Sens. 2021,13,1541. https://doi.org/10.3390/rs13081541  
 \bibitem[Giannetti et al. 2021]{Giannetti2021}
     Giannetti, F.; Pecchi, M.; Travaglini, D.; Francini, S.; D’Amico, G.; Vangi, E.; Cocozza, C.; Chirici, G. Estimating VAIA Windstorm Damaged Forest Area in Italy Using Time Series Sentinel-2 Imagery and Continuous Change Detection Algorithms. Forests 2021, 12, 680. https://doi.org/10.3390/f12060680 
 \bibitem[Confalonieri 2024]{Confalonieri2024}
-    Confalonieri M. (a cura di) (2024), Dopo Vaia: le opere e gli interventi per il recupero e la ricostruzione delle foreste trentine, Provincia autonoma di Trento, Trento. 
+    Confalonieri M. (a cura di) (2024), Dopo Vaia: le opere e gli interventi per il recupero e la ricostruzione delle foreste trentine, Provincia autonoma di Trento, Trento. \url{https://www.provincia.tn.it/Amministrazione/Documenti/Pubblicazioni/Dopo-Vaia.-Le-opere-e-gli-interventi-per-il-recupero-e-la-ricostruzione-delle-foreste-trentine}
 \bibitem[Giannetti et al. 2021]{Giannetti2021}
-    Motta R., Ascoli D., Corona P., Marchetti M., Vacchiano G. (2018), Selvicoltura e schianti da vento. Il caso della «tempesta Vaia», in «Forest@ - Rivista di Selvicoltura ed Ecologia Forestale», 15, pp. 94-98. 
-\bibitem[Giannetti et al. 2021]{Giannetti2021}
-    Provincia Autonoma di Bolzano – Ripartizione Foreste (2020), VAIA 2018 - Report finale. Danni meteorici e schianti da vento del 27/10/2018 al 30/10/2018 in Alto Adige, Bolzano. 
-\bibitem[ESA 2021]{ESA2021}
-    Copernicus Sentinel-2 (processed by ESA), 2021, MSI Level-2A BOA Reflectance Product. Collection 1. European Space Agency. https://doi.org/10.5270/S2\_-znk9xsj
+    Motta R., Ascoli D., Corona P., Marchetti M., Vacchiano G. (2018), Selvicoltura e schianti da vento. Il caso della «tempesta Vaia», in «Forest@ - Rivista di Selvicoltura ed Ecologia Forestale», 15, pp. 94-98. https://doi.org/10.3832/efor2990-015 
 \bibitem[Provincia Autonoma di Bolzano 2020]{Bolzano2020}
-    Provincia Autonoma di Bolzano – Ripartizione Foreste (2020), VAIA 2018 - Report finale. Danni meteorici e schianti da vento del 27/10/2018 al 30/10/2018 in Alto Adige, Bolzano. 
+    Provincia Autonoma di Bolzano – Ripartizione Foreste (2020), VAIA 2018 - Report finale. Danni meteorici e schianti da vento del 27/10/2018 al 30/10/2018 in Alto Adige, Bolzano. \url{https://www.provinz.bz.it/agricoltura-foreste/servizio-forestale-forestali/downloads/IT_VAIA_Endbericht_12_2020.pdf}
+\bibitem[ESA 2021]{ESA2021}
+    Copernicus Sentinel-2 (processed by ESA), 2021, MSI Level-2A BOA Reflectance Product. Collection 1. European Space Agency. https://doi.org/10.5270/S2_-znk9xsj 
 \bibitem[Rocchini 2010]{Rocchini2010}
-    Rocchini D. (2010), While Boolean sets non-gently rip: A theoretical framework on fuzzy sets for mapping landscape patterns, in «Ecological Complexity», 7, pp. 125–129.
+    Rocchini D. (2010), While Boolean sets non-gently rip: A theoretical framework on fuzzy sets for mapping landscape patterns, in «Ecological Complexity», 7, pp. 125–129. https://doi.org/10.1016/j.ecocom.2009.08.002
 \bibitem[Cerioni et al. 2025]{Cerioni2025}
     Cerioni, M., Brabec, M., Bače, R., Bāders, E., Bončina, A., Brůna, J., Chećko, E., Cordonnier, T., de Koning, J. H. C., Diaci, J., Dobrowolska, D., Dountchev, A., Engelhart, J., Fidej, G., Fuhr, M., Garbarino, M., Jansons, Ā., Keren, S., Kitenberga, M., Nagel, T. A. (2024). Recovery and resilience of European temperate forests after large and severe disturbances. Global Change Biology, 30, e17159. https://doi.org/10.1111/gcb.17159
 \bibitem[Seidl et al. 2022]{Seidl2022}
@@ -661,24 +659,16 @@ A second limitation concerns the validation of the fuzzy model. The fuzzy member
 \bibitem[White et al. 2022]{White2022}
     White J. C., Hermosilla T., Wulder M. A., Coops N. C. (2022), Mapping, validating, and interpreting spatio-temporal trends in post-disturbance forest recovery, in «Remote Sensing of Environment», 271, 112904. https://doi.org/10.1016/j.rse.2022.112904
 \bibitem[Main-Knorn et al. 2017]{Main-Knorn2017}
-    Main-Knorn M., Pflug B., Louis J., Debaecker V., Müller-Wilm U., Gascon F. (2017), Sen2Cor for Sentinel-2, in «Proceedings of SPIE - The International Society for Optical Engineering», 10427, 1042704.
+    Main-Knorn M., Pflug B., Louis J., Debaecker V., Müller-Wilm U., Gascon F. (2017), Sen2Cor for Sentinel-2, in «Proceedings of SPIE - The International Society for Optical Engineering», 10427, 1042704. https://doi.org/10.1117/12.2278218
 \bibitem[Romero et al. 2023]{Romero2023}
     Romero D., Maneyro R., Guerrero J. C., Real R. (2023), Using fuzzy logic to compare species distribution models developed on the basis of expert knowledge and sampling records, in «Frontiers in Zoology», 20, 38. https://doi.org/10.1186/s12983-023-00515-x
 \bibitem[Silvert 2000]{Silvert2000}
      Silvert W. (2000), Fuzzy indices of environmental conditions, in «Ecological Modelling», 130, pp. 111-119. https://doi.org/10.1016/S0304-3800(00)00204-0
 \bibitem[{Pusceddu, Sarà, Viaroli 2020}]{Posceddu2020}
     Pusceddu A., Sarà G., Viaroli P. (2020), Ecologia, UTET Università, Milano.
-%qui devo capire come mettere la parte dei dati 
-\bibitem [Satellite images]{satelliteimages}
-   10.5281/zenodo.18662221
-   
+
+
 \end{thebibliography}
-
-
-  
-
-
-\end{document}
 
 
   
