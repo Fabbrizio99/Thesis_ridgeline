@@ -25,10 +25,21 @@ Qui ci metterò l'abstract
 \end{abstract}
 
 \section{Introduction} \label{secInt}
+Forest ecosystems are currently facing unprecedented challenges driven by global climate change. In recent decades, disturbances affecting mountain forests have occurred with greater frequency and caused increasingly significant damage; but they are expected to happen more in the future. The most common disturbance agents are windthrows and bark beetles \cite{Piazza2024}. These are usually part of the dynamics in ecosystems and play a role in renewing the forest, creating heterogeneity and promoting biodiversity \cite{Seidl2017}. 
+
+In this context of shifting disturbance regimes, the Vaia storm, which hit Northeastern Italy in late October 2018, represents a perfect example of extreme event. Characterized by wind gusts exceeding 200 km/h, the storm caused massive destruction across the Alpine region, damaging approximately 42,500 hectares of forest and felling over 8.5 million cubic meters of timber \cite{Chirici2019}.  As described by Motta et al. (2018), the magnitude of Vaia highlighted the vulnerability of uniform, even-aged forest structures to wind disturbances, raising urgent questions about post-disturbance management and the resilience of these ecosystems. 
 
 The main objective of the thesis is to monitor and quantify the ecological recovery of forests affected by Storm Vaia (2018) in north-eastern Italy. The study aims to overcome the limitations of classic binary analyses (forest/non-forest) to assess forest restoration as a continuous gradient. This allows us to understand the dynamics of spatial recolonisation (e.g. the early greening of pioneer species) and to provide useful tools for forest management.
 
+The present work is organized into six chapters. Chapter two provides a comprehensive literature review. It begins by contextualizing the Vaia storm, defining the damages occurred. It then examines the ecological principles of forest recovery and critically analyzes the limitations of traditional remote sensing techniques, highlighting the constraints of binary classifications in transitional ecosystems.
 
+Chapter three details the characteristics of the six study areas selected in the Trentino and Veneto regions and describes the Sentinel-2 data acquisition process. It defines the theoretical shift from Boolean to Fuzzy Logic, explaining how continuous membership degrees were calculated to model ecological uncertainty. Finally, it introduces the statistical framework used for the analysis, specifically justifying the adoption of Ridgeline Plots as proxies for landscape heterogeneity.
+
+Chapter 4 presents the results of the spatio-temporal analysis. For each of the six study areas, the recovery trajectories from 2017 to 2025 are displayed through Ridgeline visualizations and quantitative tables, highlighting the diverse responses of the forest ecosystems.
+
+The fifth chapter is dedicated to the discussion, where the empirical results are interpreted with an ecological lens. Finally, the advantages and limitations of the approach used in the work are discussed. 
+
+Chapter 6 summarizes the main findings in the conclusions, offering a final synthesis of how the integration of Fuzzy logic and advanced visualization techniques can improve the monitoring of post-disturbance forest dynamics.
 
 \section{Literature review}
 \subsection{The Vaia storm} 
@@ -594,6 +605,10 @@ The storm in October 2018 severely compromised this structural continuity. In 20
 
 The subsequent observation window (2021–2025) reveals a general upward trajectory in Fuzzy Mean across most study areas. Ecologically, this trend is best interpreted as early greening rather than a rapid return to pre‑Vaia forest structure \cite{Giupponi2023}. Remote‑sensing studies show that spectral or “greenness” recovery often occurs well before the re‑establishment of tall, closed‑canopy forests, and can be largely driven by non‑arboreal or early‑successional vegetation \cite{White2022}.
 As documented by Giupponi et al. (2023), post-Vaia environments are subject to intense recolonisation dynamics by herbaceous vegetation (such as Epilobium angustifolium or Calamagrostis villosa) and pioneer shrubs (e.g., Rubus idaeus), which quickly restore a continuous photosynthetic signal. While this early greening stabilises the topsoil, it also creates strong interspecific competition for natural tree regeneration.
+%nuovo
+Another factor that may have facilitated recolonisation by pioneer species is salvage logging. As discussed by Marangon et al. (2024), the impact of salvage logging leads to a significant loss of biological legacies, such as deadwood and micro-topography, which provide crucial shelter for seedlings and saplings. However, this removal of canopy cover and woody debris also creates a high-light environment, in which fast-growing broadleaves and pioneer species take advantage of this increased light transmission to rapidly outgrow and escape competition from the dense layer of tall herbs and shrubs\cite{Marangon2024}.
+Together, these factors explain the steady increase in NDVI values occurring in all the regions analysed. In fact, the trend observed is one of a drastic decline due to the storm, followed by an increase in the index to high values in 2025. However, there are two exceptions, Panchià and Aldino, where the maximum peak is reached in 2023 and a slight decline is observed in 2025. 
+ 
 
 The added value of combining Fuzzy Mean with SD becomes evident when comparing the distinct recovery trajectories of the different geographical areas. Piana di Marcesina and Vetriolo demonstrated a rapid "healing" process: their SD steadily decreased year by year after 2019, suggesting a vigorous and spatially uniform expansion of pioneer vegetation. Conversely, Fiera di Primiero maintained persistently high SD values (0.247 in 2023), indicating a much patchier and irregular recovery, likely driven by its more complex topography and steeper slopes. Furthermore, the model successfully captured temporal anomalies related to bioclimatic limits and human management. In Ville di Fiemme, the recovery was significantly delayed, with the Fuzzy Mean remaining stagnant until 2021 and the SD peaking only in 2023. This lag can be attributed to the higher elevation of the site, where a shorter growing season and harsher climatic conditions slow down the establishment of pioneer communities. Finally, the area of Aldino showed a unique secondary decline in the Fuzzy Mean between 2023 and 2025 (from 0.605 to 0.546).
 
@@ -614,6 +629,17 @@ By capturing the dynamic mosaic of forest reorganisation \cite{Seidl2022}, these
 While the integration of Fuzzy logic and Ridgeline plots provided significant insights into post-Vaia forest recovery, this study acknowledges certain methodological and technological limitations. Primarily, the research relies exclusively on optical multispectral data from the Sentinel-2 mission. As a passive optical sensor, Sentinel-2 captures the two-dimensional top-of-canopy reflectance, making it highly effective at tracking the photosynthetic vigor (greenness) of the recovering vegetation. However, it lacks the ability to penetrate the canopy and measure the three-dimensional vertical structure of the forest. Consequently, the high Fuzzy membership values observed in recent years (e.g., 2023-2025) are inherently limited to representing a rapid "spectral recovery" driven by pioneer understory species, rather than confirming a true structural recovery of mature high-forest stands \citep{White2022, Giupponi2023}.
 
 A second limitation concerns the validation of the fuzzy model. The fuzzy membership degrees and the interpretation of the spatial heterogeneity were derived entirely from satellite spectral distributions and supported by existing literature. Although robust, this approach currently lacks extensive in-situ ground-truthing, which is a critical step for verifying spatial distribution models \cite{Romero2023}. Field-based validations—such as measuring seedling density, actual tree height, and species composition within permanent sampling plots—would be necessary to strictly calibrate the Fuzzy thresholds and definitively link specific mathematical values to precise ecological states on the ground \cite{White2022}.
+
+\section{Conclusions}
+This thesis addressed the critical challenge of post-disturbance monitoring in Alpine ecosystems, using the Vaia Storm as a paradigmatic case study to test novel remote sensing methodologies. In a climatic context where such extreme events are projected to increase in frequency, the ability to assess not only where the forest was destroyed but how it is reorganizing has become a priority for forest management. 
+
+The primary contribution of this research lies in overcoming the limitations of traditional binary classifications (Forest/Non-Forest). The adoption of Fuzzy logic applied to Sentinel-2 time series (2017-2025) demonstrated that ecological recovery phases are not discrete states but continuous gradients. The results confirm that the use of continuous membership degrees allows for a more faithful modeling of the ecological uncertainty characterizing transitional landscapes. 
+
+From an analytical perspective, the innovative implementation of Ridgeline Plots proved very useful for visualising the spatial complexity of recovery. While conventional statistics based on averages tend to obscure internal variability, the analysis of density distributions and standard deviation made it possible to quantify the heterogeneity of the landscape. This makes it possible to distinguish between areas with homogeneous recovery and those characterised by a fragmented mosaic of bare soil, herbaceous vegetation and regeneration. 
+
+From an ecological perspective, the results highlight a marked phenomenon of early greening, characterised by a rapid increase in average fuzzy values observed in the period 2021–2023. However, as already discussed, this spectral recovery should not be confused with complete structural recovery. The data suggest that this greening is mainly driven by the proliferation of pioneer species, shrubs and tall grasses, often accelerated by salvage logging operations that have cleared the ground. Consequently, although the satellite signal shows an increase in vegetative vigour, the protective function of the forest (and the restoration of mature woody biomass) will take decades to be fully re-established. 
+
+In conclusion, this study demonstrates that the integration of medium-resolution optical data, fuzzy logic, and advanced statistical visualisation provides forest managers with a powerful monitoring tool. Although future integration with three-dimensional data (LiDAR) remains necessary to validate the vertical component of forest structure, the proposed methodology provides a solid basis for identifying recovery trajectories and targeting silvicultural interventions where the natural resilience of the system struggles to manifest itself. 
 
 \section*{Data and code}
 Findable, accessible, interoperable and reusable (FAIR) data was used in my thesis, which can be consulted at the following link \url{10.5281/zenodo.18662221}. It is also possible to view details of the R code implemented for data analysis at the link \url{https://github.com/Fabbrizio99/Thesis_ridgeline/blob/main/ridgeline2.md}.
@@ -655,7 +681,7 @@ Findable, accessible, interoperable and reusable (FAIR) data was used in my thes
 \bibitem[Cerioni et al. 2025]{Cerioni2025}
     Cerioni, M., Brabec, M., Bače, R., Bāders, E., Bončina, A., Brůna, J., Chećko, E., Cordonnier, T., de Koning, J. H. C., Diaci, J., Dobrowolska, D., Dountchev, A., Engelhart, J., Fidej, G., Fuhr, M., Garbarino, M., Jansons, Ā., Keren, S., Kitenberga, M., Nagel, T. A. (2024). Recovery and resilience of European temperate forests after large and severe disturbances. Global Change Biology, 30, e17159. https://doi.org/10.1111/gcb.17159
 \bibitem[Seidl et al. 2022]{Seidl2022}
-     Seidl R., Turner M. G. (2022), Post-disturbance reorganization of forest ecosystems in a changing world, in «PNAS - Proceedings of the National Academy of Sciences», 119, e2202190119. https://doi.org/10.1073/pnas.2202190119
+     Seidl R., Turner M. G. (2022), Post-disturbance reorganisation of forest ecosystems in a changing world, in «PNAS - Proceedings of the National Academy of Sciences», 119, e2202190119. https://doi.org/10.1073/pnas.2202190119
 \bibitem[White et al. 2022]{White2022}
     White J. C., Hermosilla T., Wulder M. A., Coops N. C. (2022), Mapping, validating, and interpreting spatio-temporal trends in post-disturbance forest recovery, in «Remote Sensing of Environment», 271, 112904. https://doi.org/10.1016/j.rse.2022.112904
 \bibitem[Main-Knorn et al. 2017]{Main-Knorn2017}
@@ -667,7 +693,8 @@ Findable, accessible, interoperable and reusable (FAIR) data was used in my thes
 \bibitem[{Pusceddu, Sarà, Viaroli 2020}]{Posceddu2020}
     Pusceddu A., Sarà G., Viaroli P. (2020), Ecologia, UTET Università, Milano.
 
-
+\bibitem[Seidl et al. 2017]{Seidl2017}
+    Seidl, Rupert & Thom, Dominik & Kautz, Markus & Martín-Benito, Darío & Peltoniemi, Mikko & Vacchiano, Giorgio & Wild, Jan & Ascoli, Davide & Petr, Michal & Honkaniemi, Juha & Lexer, Manfred & Trotsiuk, Volodymyr & Mairota, Paola & Svoboda, Miroslav & Fabrika, Marek & Nagel, Thomas & Reyer, Christopher. (2017). Forest disturbances under climate change. Nature Climate Change. 7. 395-402. https://doi.org/10.1038/nclimate3303
 \end{thebibliography}
 
 
