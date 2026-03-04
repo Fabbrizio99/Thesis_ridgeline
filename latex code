@@ -25,21 +25,21 @@ Qui ci metterò l'abstract
 \end{abstract}
 
 \section{Introduction} \label{secInt}
-Forest ecosystems are currently facing unprecedented challenges driven by global climate change. In recent decades, disturbances affecting mountain forests have occurred with greater frequency and caused increasingly significant damage; but they are expected to happen more in the future. The most common disturbance agents are windthrows and bark beetles \cite{Piazza2024}. These are usually part of the dynamics in ecosystems and play a role in renewing the forest, creating heterogeneity and promoting biodiversity \cite{Seidl2017}. 
+Forest ecosystems are currently facing unprecedented challenges driven by global climate change. In recent decades, disturbances affecting mountain forests have occurred with greater frequency and caused increasingly significant damage, but they are expected to happen more in the future. The most common disturbance agents are windthrows and bark beetles \cite{Piazza2024}. These are usually part of the dynamics in ecosystems and play a role in renewing the forest, creating heterogeneity and promoting biodiversity \cite{Seidl2017}. 
 
-In this context of shifting disturbance regimes, the Vaia storm, which hit Northeastern Italy in late October 2018, represents a perfect example of extreme event. Characterized by wind gusts exceeding 200 km/h, the storm caused massive destruction across the Alpine region, damaging approximately 42,500 hectares of forest and felling over 8.5 million cubic meters of timber \cite{Chirici2019}.  As described by Motta et al. (2018), the magnitude of Vaia highlighted the vulnerability of uniform, even-aged forest structures to wind disturbances, raising urgent questions about post-disturbance management and the resilience of these ecosystems. 
+In this context of shifting disturbance regimes, the Vaia storm, which hit Northeastern Italy in late October 2018, represents a perfect example of an extreme event. Characterised by wind gusts exceeding 200 km/h, the storm caused massive destruction across the Alpine region, damaging approximately 42,500 hectares of forest and felling over 8.5 million cubic meters of timber \cite{Chirici2019}.  As described by Motta et al. (2018), the magnitude of Vaia highlighted the vulnerability of uniform, even-aged forest structures to wind disturbances, raising urgent questions about post-disturbance management and the resilience of these ecosystems. 
 
 The main objective of the thesis is to monitor and quantify the ecological recovery of forests affected by Storm Vaia (2018) in north-eastern Italy. The study aims to overcome the limitations of classic binary analyses (forest/non-forest) to assess forest restoration as a continuous gradient. This allows us to understand the dynamics of spatial recolonisation (e.g. the early greening of pioneer species) and to provide useful tools for forest management.
 
-The present work is organized into six chapters. Chapter two provides a comprehensive literature review. It begins by contextualizing the Vaia storm, defining the damages occurred. It then examines the ecological principles of forest recovery and critically analyzes the limitations of traditional remote sensing techniques, highlighting the constraints of binary classifications in transitional ecosystems.
+The present work is organised into six chapters. Chapter two provides a comprehensive literature review. It begins by contextualising the Vaia storm, defining the damage that occurred. It then examines the ecological principles of forest recovery and critically analyses the limitations of traditional remote sensing techniques, highlighting the constraints of binary classifications in transitional ecosystems.
 
 Chapter three details the characteristics of the six study areas selected in the Trentino and Veneto regions and describes the Sentinel-2 data acquisition process. It defines the theoretical shift from Boolean to Fuzzy Logic, explaining how continuous membership degrees were calculated to model ecological uncertainty. Finally, it introduces the statistical framework used for the analysis, specifically justifying the adoption of Ridgeline Plots as proxies for landscape heterogeneity.
 
-Chapter 4 presents the results of the spatio-temporal analysis. For each of the six study areas, the recovery trajectories from 2017 to 2025 are displayed through Ridgeline visualizations and quantitative tables, highlighting the diverse responses of the forest ecosystems.
+Chapter 4 presents the results of the spatio-temporal analysis. For each of the six study areas, the recovery trajectories from 2017 to 2025 are displayed through Ridgeline visualisations and quantitative tables, highlighting the diverse responses of the forest ecosystems.
 
-The fifth chapter is dedicated to the discussion, where the empirical results are interpreted with an ecological lens. Finally, the advantages and limitations of the approach used in the work are discussed. 
+The fifth chapter is dedicated to the discussion, where the empirical results are interpreted through an ecological lens. Finally, the advantages and limitations of the approach used in the work are discussed. 
 
-Chapter 6 summarizes the main findings in the conclusions, offering a final synthesis of how the integration of Fuzzy logic and advanced visualization techniques can improve the monitoring of post-disturbance forest dynamics.
+Chapter 6 summarises the main findings in the conclusions, offering a final synthesis of how the integration of Fuzzy logic and advanced visualisation techniques can improve the monitoring of post-disturbance forest dynamics.
 
 \section{Literature review}
 \subsection{The Vaia storm} 
@@ -50,15 +50,15 @@ This intensity caused unprecedented damage in the Eastern Alps, mainly affecting
 
 Overall, the storm knocked down approximately 8.5 million m³ of timber across an area of over 42,500 hectares. Although regionally the damage affected about 3\% of the forest area, locally the destruction of the forest reached peaks of 47\%, radically altering the ecosystem continuity of entire forest districts \cite{Chirici2019}. 
 
-Vaia not only had an immediate ecological impact, but also a socio-economic one. Post-event management involved salvage logging in many cases. This practice was carried out to maximise revenue before the wood on the ground was damaged and to reduce the proliferation of the European spruce bark beetle (Ips typographus), which finds dead wood to be the ideal place for outbreaks. However, these operations caused a second anthropogenic disturbance that transformed the forests into veritable construction sites. The use of heavy machinery to remove fallen logs causes a loss of residual vegetation and an alteration of the soil structure, which modifies the initial conditions for vegetation recolonisation \cite{Marangon2024}.  
+Vaia not only had an immediate ecological impact, but also a socio-economic one. Post-event management involved salvage logging in many cases. This practice was carried out to maximise revenue before the wood on the ground was damaged and to reduce the proliferation of the European spruce bark beetle (\textit{Ips typographus}), which finds dead wood to be the ideal place for outbreaks. However, these operations caused a second anthropogenic disturbance that transformed the forests into veritable construction sites. The use of heavy machinery to remove fallen logs causes a loss of residual vegetation and an alteration of the soil structure, which modifies the initial conditions for vegetation recolonisation \cite{Marangon2024}.  
 
 \subsection{Ecology of disturbances and forest continuity}  
 
 When we talk about disturbance ecology, we must first understand what is meant by disturbance. Disturbance, in fact, represents “the set of mechanisms and processes that alter the balance of one or more levels of the ecological hierarchy, from the individual to the ecosystem” \cite{Posceddu2020}.  
-
+%migliorare quello qui sotto (nel primo capitolo non spiego bene questo)
 In this sense, in chapter 2.1 we defined the main characteristics that define a disturbance, such as its cause, effects, intensity and extent of damage. In this chapter, we will explore the responses of individuals, particularly starting from biological legacies. 
 
-“In an ecological context, we define “biological legacies” as the organisms, organic materials, and organically-generated environmental patterns that persist through a disturbance and are incorporated into the recovering ecosystem. Organisms may persist as intact organisms or as seed banks, spores, fungal hyphae, and parts (such as rhizomes) with a capacity to regenerate the whole organism” \cite{Franklin2000}. 
+“In an ecological context, we define “biological legacies” as the organisms, organic materials, and organically-generated environmental patterns that persist through a disturbance and are incorporated into the recovering ecosystem. Organisms may persist as intact organisms or as seed banks, spores, fungal hyphae, and parts (such as rhizomes) with a capacity to regenerate the whole organism” \cite{Franklin2000}. %qua forse è un po' scollegato e può essere spiegato meglio
 This is a key concept for understanding post-Vaia resilience because, contrary to the perception of a destructive event creating a “tabula rasa”, Franklin et al. (2000) highlight how natural disturbances leave a considerable amount of living organisms and organic structures on the ground. 
  
 These organisms leave a legacy and act as a link between the pre-disturbance and post-disturbance forest, accelerating recolonisation processes and maintaining ecosystem functions.   
@@ -67,15 +67,15 @@ The forest will now follow ecological succession, starting from what remains in 
 
 The disruption of the prevailing forest structure represents an alteration of microclimatic conditions, such as canopy cover, soil conditions, and the availability and distribution of resources and microhabitats \cite{Gazzea2025}. 
 
-As observed by Giupponi et al. (2023) in the areas affected by Vaia, there has been an explosive proliferation of herbaceous and shrubby species. This phenomenon has fundamental implications for the study of recovery concerning interspecific competition. The work of Piazza et al. (2024) contributes by indicating that in the areas affected by Vaia, in the phases following the disturbance, there is an increase in the heterogeneity of microsites due to the greater availability of light and nutrients. These conditions favour the development of pioneer species, such as tall grasses and brambles, which can prevent or delay the establishment of seedlings germinated after the disturbance, while seedlings and saplings in advanced regeneration can benefit from accelerated growth thanks to full light conditions in areas disturbed by wind. 
+As observed by Giupponi et al. (2023) in the areas affected by Vaia, there has been an explosive proliferation of herbaceous and shrubby species. This phenomenon has fundamental implications for the study of recovery in the context of interspecific competition. The work of Piazza et al. (2024) contributes by indicating that in the areas affected by Vaia, in the phases following the disturbance, there is an increase in the heterogeneity of microsites due to the greater availability of light and nutrients. These conditions favour the development of pioneer species, such as tall grasses and brambles, which can prevent or delay the establishment of seedlings germinated after the disturbance, while seedlings and saplings in advanced regeneration can benefit from accelerated growth thanks to full light conditions in areas disturbed by wind. 
 
-\subsection{Ecosystem functions and protection}
-
-Disastrous events such as Vaia not only cause damage to forests but also have major repercussions on their ecosystem functions. The main ecosystem services I will focus on in this chapter concern protection against natural hazards. This aspect concerns events such as rockfalls, avalanches and surface erosion. The collapse of many trees, which in some areas corresponds to entire slopes near mountain villages, suggests that the vulnerability of these areas is increasing.   
+\subsection{Ecosystem services and protection}
+%forse qui ha più senso capire se dire che parlo di salvage logging piuttosto che servizi ecosistemici
+Disastrous events such as Vaia not only cause damage to forests but also have major repercussions on their ecosystem services. This chapter examines the primary services related to protection against natural hazards. This aspect concerns events such as rockfalls, avalanches and surface erosion that can have impacts on people leaving in these areas. The collapse of many trees, which in some areas corresponds to entire slopes near mountain villages, suggests that the vulnerability of these areas is increasing.   
 
  The study conducted by Costa et al. (2021) seeks to understand how the interactions of natural disturbances interface with the multifunctionality of mountain forests. Specifically, they demonstrate how, in the immediate aftermath of the storm, through simulations of rockfalls along a slope affected by Vaia, the effectiveness of forest protection increases compared to the previous forest. This is because biological legacies (mainly dead wood on the ground) increase the roughness of the surface, creating a positive barrier effect.   
 
- However, the dynamics are different when it comes to slope stability (surface landslides). Although the root system of dead trees maintains a residual soil cohesion capacity for several years before degrading, the removal of timber through salvage logging can accelerate erosion due to mechanical disturbance of the soil \cite{Lindenmayer2006}. 
+ Considering slope stability, with a primary focus on avoiding surface landslides, the presence of dead logs on the ground has a relevant impact. Root system of dead trees maintains a residual soil cohesion capacity for several years before degrading, while the removal of timber through salvage logging can accelerate erosion due to mechanical disturbance of the soil \cite{Lindenmayer2006}. 
 
  A fundamental concept in this case is the protection gap, which is defined as the period of time during which the protective function of the forest against natural hazards (avalanches, rockfalls) is compromised or insufficient. The work of Costa et al. (2021) shows that this should be the main target in forest management strategies. 
  
@@ -103,7 +103,8 @@ Where:
     \item RED is the reflectance in the visible red (Band 4 in Sentinel-2).
 \end{itemize}
  
-NDVI values range from –1 to +1, indicating the absence of vegetation and dense, lush vegetation, respectively.  Studies conducted by Piragnolo et al. (2021) on the Vaia event confirm that NDVI is one of the most significant predictive variables for identifying damaged areas, recording a sudden drop in values immediately after the event. 
+NDVI values range from –1 to +1, indicating the absence of vegetation and dense, lush vegetation, respectively.%qui magari è da siegare meglio
+Studies conducted by Piragnolo et al. (2021) on the Vaia event confirm that NDVI is one of the most significant predictive variables for identifying damaged areas, recording a sudden drop in values immediately after the event. 
 
 Although NDVI is a robust and effective indicator of forest cover, it has ecological limitations due to the difficulty of distinguishing between forest structure recovery and the growth of non-target vegetation \cite{Giannetti2021}.  
 
@@ -115,12 +116,143 @@ This raises the question of how to interpret NDVI time series using statistical 
 \subsection{Areas of study}
 The research covered six mountain areas affected by Storm Vaia, distributed across the provinces of Trento, Bolzano and Vicenza. The selection of sites was guided by the availability of Sentinel-2 L2A satellite time series with cloud cover of less than 10\%, in order to ensure the continuity of spectral data. The selected areas (Table \ref{tab:study_areas}) cover an altitude range between 1,435 m and 1,742 m above sea level, allowing the observation of recolonisation dynamics in different site conditions.  
 \begin{itemize}
-    \item Area 1: Panchià locality in the province of Trento, in Val di Fiemme; located at 1,562 m above sea level (46.258° N; 11.543° E). As highlighted in the report on the restoration work carried out, “After Vaia: works and interventions for the recovery and reconstruction of the Trentino forests”, this area suffered widespread damage in a zone that is difficult to access. Furthermore, it is reported that “since the last felling in the 1960s, the forest had remained virtually intact [...] but an exceptional event such as Vaia [...] had 'reaped” the trees, completely flattening the forest cover'\cite[p. 14]{Confalonieri2024}.
+    \item Area 1: Panchià locality in the province of Trento, in Val di Fiemme; located at 1,562 m above sea level (46.258° N; 11.543° E). As highlighted in the report on the restoration work carried out, “After Vaia: works and interventions for the recovery and reconstruction of the Trentino forests”, this area suffered widespread damage in a zone that is difficult to access. Furthermore, it is reported that “since the last felling in the 1960s, the forest had remained virtually intact [...] but an exceptional event such as Vaia [...] had 'reaped'” the trees, completely flattening the forest cover'\cite[p. 14]{Confalonieri2024}. %controllare dove finisce la citazione
+    \begin{figure}[h!]
+    \centering
+    % --- Prima immagine (Sinistra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2017 Val di Fiemme.jpg}
+        \caption{2017}
+        \label{fig:img_sinistra}
+    \end{subfigure}
+    \hfill 
+    % --- Seconda immagine (Destra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2019 Val di Fiemme.jpg}
+        \caption{2019}
+        \label{fig:img_destra}
+    \end{subfigure}
+    
+    \caption{Comparison between the two images}
+    \label{fig:confronto_completo}
+    \end{figure}
+    \FloatBarrier
     \item Area 2: Marcesina Plain, Enego (VI). Located at 1,435 m above sea level (45.954° N; 11.591° E). This very large area is one of the most affected, with damage due to its structural vulnerability, which had already been highlighted by Motta et al. (2018), who associate the severity of the damage with the simplification of forest formations and the morphology of the site, which favoured wind speeds exceeding mechanical breaking thresholds. 
-    \item Area 3: Primiero San Martino di Castrozza (TN). Located at 1,545 m above sea level (46.180° N; 11.804° E). As reported in Confalonieri (2024), “Storm Vaia hit the Primiero area hard, [...] causing total damage of around 500,000 m3 of timber” (p. 76). 
+    \begin{figure}[h!]
+    \centering
+    % --- Prima immagine (Sinistra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2017 piana di marcesina.jpg}
+        \caption{2017}
+        \label{fig:img_sinistramarcesina}
+    \end{subfigure}
+    \hfill 
+    % --- Seconda immagine (Destra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2019 piana di marcesina.jpg}
+        \caption{2019}
+        \label{fig:img_destramarcesina}
+    \end{subfigure}
+    
+    \caption{Comparison between the two images}
+    \label{fig:confronto_completo}
+    \end{figure}
+    \FloatBarrier
+    \item Area 3: Primiero San Martino di Castrozza (TN). Located at 1,545 m above sea level (46.180° N; 11.804° E). As reported in Confalonieri (2024), “Storm Vaia hit the Primiero area hard, [...] causing total damage of around 500,000 m³ of timber” (p. 76). 
+    \begin{figure}[h!]
+    \centering
+    % --- Prima immagine (Sinistra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2017 primiero.png}
+        \caption{2017}
+        \label{fig:img_sinistraprimiero}
+    \end{subfigure}
+    \hfill 
+    % --- Seconda immagine (Destra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2019 primiero.png}
+        \caption{2019}
+        \label{fig:img_destraprimiero}
+    \end{subfigure}
+    
+    \caption{Comparison between the two images}
+    \label{fig:confronto_completo}
+    \end{figure}
     \item Area 4: Levico Terme (TN), near Vetriolo. Located at 1,707 m above sea level (46.045° N; 11.327° E). The study area is located on the southern slope of Monte Panarotta, an area subject to widespread tree falls and complex forest road restoration work \cite{Confalonieri2024}.
+    \begin{figure}[h!]
+    \centering
+    % --- Prima immagine (Sinistra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2017vetriolo.png}
+        \caption{2017}
+        \label{fig:img_sinistravetriolo}
+    \end{subfigure}
+    \hfill 
+    % --- Seconda immagine (Destra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2019vetriolo.png}
+        \caption{2019}
+        \label{fig:img_destravetriolo}
+    \end{subfigure}
+    
+    \caption{Comparison between the two images}
+    \label{fig:confronto_completo}
+    \end{figure}
+    \FloatBarrier
     \item Area 5: Ville di Fiemme (TN), Varena/Passo Lavazé locality. Area located at 1,742 m above sea level (46.344° N; 11.486° E). It represents the highest point in the dataset. As reported by Confalonieri (2024), the Passo Lavazé area suffered massive landslides that required complex clearance and road restoration work (p. 36).
+    \begin{figure}[h!]
+    \centering
+    % --- Prima immagine (Sinistra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{truevarena2017.png}
+        \caption{2017}
+        \label{fig:img_sinistrafiemme}
+    \end{subfigure}
+    \hfill 
+    % --- Seconda immagine (Destra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{truevarena2019.png}
+        \caption{2019}
+        \label{fig:img_destrafiemme}
+    \end{subfigure}
+    
+    \caption{Comparison between the two images}
+    \label{fig:confronto_completo}
+    \end{figure}
+    \FloatBarrier
     \item Area 6: Aldino (BZ), located at 46.3417° N and 11.4134° E, altitude 1,655.49 m above sea level. In this area, according to official data from the Autonomous Province of Bolzano (2020), the area affected by tree falls in the relevant Forestry Inspectorate amounts to 740 ha, representing 11.7\% of the total forest area in the district (p. 14).
+    \begin{figure}[h!]
+    \centering
+    % --- Prima immagine (Sinistra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trueredagno2017.png}
+        \caption{2017}
+        \label{fig:img_sinistraaldino}
+    \end{subfigure}
+    \hfill 
+    % --- Seconda immagine (Destra) ---
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{trueredagno2019.png}
+        \caption{2019}
+        \label{fig:img_destraaldino}
+    \end{subfigure}
+    
+    \caption{Comparison between the two images}
+    \label{fig:confronto_completo}
+    \end{figure}
+    \FloatBarrier
 \end{itemize}
 \begin{table}[h!]
     \centering
@@ -143,7 +275,7 @@ The research covered six mountain areas affected by Storm Vaia, distributed acro
 \end{table}
 
 \subsection{Satellite data}
-To analyse forest continuity dynamics, I decided to use images taken from the Copernicus Sentinel-2 L2A mission, which are accessible on the Copernicus Browser portal. The choice of this sensor is justified by three main factors: temporal resolution, spatial resolution and radiometric resolution \cite{ESA2021}. The monitoring frequency is 5 days, which is useful for providing cloud-free images in mountainous areas where the weather changes constantly and cloud cover causes problems with data acquisition at certain times. Sentinel-2 has variable spatial resolution, with a detail of 10 metres for the visible (B4) and near-infrared (B8) bands, and high radiometric resolution provides good sensitivity to variations in reflected light.   
+To analyse forest continuity dynamics, images from the Copernicus Sentinel-2 L2A mission were utilized, acquired through the Copernicus Browser portal. The choice of this sensor is justified by three main factors: temporal resolution, spatial resolution and radiometric resolution \cite{ESA2021}. The monitoring frequency is 5 days, which is useful for providing cloud-free images in mountainous areas where the weather changes constantly and cloud cover causes problems with data acquisition at certain times. Sentinel-2 has variable spatial resolution, with a detail of 10 metres for the visible (B4) and near-infrared (B8) bands, and high radiometric resolution provides good sensitivity to variations in reflected light.   
 
 All the images used were taken between September and mid-October (see Table 2 for details) to ensure data comparability and avoid variations in spectral parameters related to vegetation phenology. This prevents differences in NDVI values due to seasonality, allowing differences to be attributed to post-disturbance recovery dynamics. 
 \begin{table}[h!]
@@ -212,31 +344,10 @@ Finally, alongside the visual representation, quantitative summary statistics we
 In particular, the last value was calculated as the difference between the Fuzzy Mean of any given year and the NDVI Mean of 2019 (the year of maximum damage), establishing a clear baseline to track the progressive spectral recovery. 
 
 \section{Results}
-In this chapter, I will show the results obtained from the analysis of images for each study area. 
+This chapter presents the results obtained from the image analysis for each study area. 
 \subsection{Area 1: Panchià(Val di Fiemme)}
 
-\begin{figure}[h!]
-    \centering
-    % --- Prima immagine (Sinistra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2017 Val di Fiemme.jpg}
-        \caption{2017}
-        \label{fig:img_sinistra}
-    \end{subfigure}
-    \hfill 
-    % --- Seconda immagine (Destra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2019 Val di Fiemme.jpg}
-        \caption{2019}
-        \label{fig:img_destra}
-    \end{subfigure}
-    
-    \caption{Comparison between the two images}
-    \label{fig:confronto_completo}
-\end{figure}
-\FloatBarrier
+
 \begin{figure}[H] % La H blocca l'immagine QUI
     \centering
     \includegraphics[width=\textwidth]{Rplotfuzzypanchià.png}
@@ -279,28 +390,7 @@ In this chapter, I will show the results obtained from the analysis of images fo
 
 \subsection{Area 2: Piana di Marcesina}
 
-\begin{figure}[h!]
-    \centering
-    % --- Prima immagine (Sinistra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2017 piana di marcesina.jpg}
-        \caption{2017}
-        \label{fig:img_sinistramarcesina}
-    \end{subfigure}
-    \hfill 
-    % --- Seconda immagine (Destra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2019 piana di marcesina.jpg}
-        \caption{2019}
-        \label{fig:img_destramarcesina}
-    \end{subfigure}
-    
-    \caption{Comparison between the two images}
-    \label{fig:confronto_completo}
-\end{figure}
-\FloatBarrier
+
 \begin{figure}[H] % La H blocca l'immagine QUI
     \centering
     \includegraphics[width=\textwidth]{Rplotmarcesina fuzzy.png}
@@ -342,27 +432,7 @@ In this chapter, I will show the results obtained from the analysis of images fo
 \end{itemize}
 
 \subsection{Area 3: Primiero San Martino di Castrozza}
-\begin{figure}[h!]
-    \centering
-    % --- Prima immagine (Sinistra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2017 primiero.png}
-        \caption{2017}
-        \label{fig:img_sinistraprimiero}
-    \end{subfigure}
-    \hfill 
-    % --- Seconda immagine (Destra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2019 primiero.png}
-        \caption{2019}
-        \label{fig:img_destraprimiero}
-    \end{subfigure}
-    
-    \caption{Comparison between the two images}
-    \label{fig:confronto_completo}
-\end{figure}
+
 
 \begin{figure}[H] 
     \centering
@@ -405,28 +475,7 @@ In this chapter, I will show the results obtained from the analysis of images fo
 
 \subsection{Area 4: Levico Terme}
 
-\begin{figure}[h!]
-    \centering
-    % --- Prima immagine (Sinistra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2017vetriolo.png}
-        \caption{2017}
-        \label{fig:img_sinistravetriolo}
-    \end{subfigure}
-    \hfill 
-    % --- Seconda immagine (Destra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{2019vetriolo.png}
-        \caption{2019}
-        \label{fig:img_destravetriolo}
-    \end{subfigure}
-    
-    \caption{Comparison between the two images}
-    \label{fig:confronto_completo}
-\end{figure}
-\FloatBarrier
+
 \begin{figure}[H] % La H blocca l'immagine QUI
     \centering
     \includegraphics[width=\textwidth]{Rplotfuzzyvetriolo.png}
@@ -470,28 +519,7 @@ In this chapter, I will show the results obtained from the analysis of images fo
 
 \subsection{Area 5: Ville di Fiemme}
 
-\begin{figure}[h!]
-    \centering
-    % --- Prima immagine (Sinistra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{truevarena2017.png}
-        \caption{2017}
-        \label{fig:img_sinistrafiemme}
-    \end{subfigure}
-    \hfill 
-    % --- Seconda immagine (Destra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{truevarena2019.png}
-        \caption{2019}
-        \label{fig:img_destrafiemme}
-    \end{subfigure}
-    
-    \caption{Comparison between the two images}
-    \label{fig:confronto_completo}
-\end{figure}
-\FloatBarrier
+
 \begin{figure}[H] % La H blocca l'immagine QUI
     \centering
     \includegraphics[width=0.8\textwidth]{fuzzyvarena.png}
@@ -534,28 +562,7 @@ In this chapter, I will show the results obtained from the analysis of images fo
 
 \subsection{Area 6: Aldino}
 
-\begin{figure}[h!]
-    \centering
-    % --- Prima immagine (Sinistra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{trueredagno2017.png}
-        \caption{2017}
-        \label{fig:img_sinistraaldino}
-    \end{subfigure}
-    \hfill 
-    % --- Seconda immagine (Destra) ---
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{trueredagno2019.png}
-        \caption{2019}
-        \label{fig:img_destraaldino}
-    \end{subfigure}
-    
-    \caption{Comparison between the two images}
-    \label{fig:confronto_completo}
-\end{figure}
-\FloatBarrier
+
 \begin{figure}[H] % La H blocca l'immagine QUI
     \centering
     \includegraphics[width=\textwidth]{fuzzyredagno.png}
@@ -599,18 +606,20 @@ In this chapter, I will show the results obtained from the analysis of images fo
 \section{Discussion}
 \subsection{Ecological interpretation of recovery trajectories}
   
-The temporal analysis of the six study areas through the application of Fuzzy logic and Ridgeline graphs provided a continuous perspective on the dynamics of the forest ecosystem after Storm Vaia. Before the event (2017), all areas had high Fuzzy mean values, ranging from 0.885 in Primiero to 0.996 in Aldino, and low standard deviations, reflecting the presence of mature, closed-canopy, structurally homogeneous forest stands typical of the Trentino and South Tyrol regions \cite{Bolzano2020}. Such pre-disturbance conditions, with dense evergreen canopies and low structural variability, are characteristic of forests that have not recently experienced large, stand‑replacing disturbances \cite{Cerioni2025}.
+The temporal analysis of the six study areas through the application of Fuzzy logic and Ridgeline graphs provided a continuous perspective on the dynamics of the forest ecosystem after Storm Vaia. Before the event (2017), all areas had high Fuzzy mean values, ranging from 0.885 in Primiero to 0.996 in Aldino, and low standard deviations, reflecting the presence of mature, closed-canopy, structurally homogeneous forest stands typical of the Trentino and South Tyrol regions \cite{Bolzano2020}. Such pre-disturbance conditions, with dense evergreen canopies and low structural variability, are characteristic of forests characterized by a prolonged period of stability without large, stand-replacing disturbances \cite{Cerioni2025}.
 
 The storm in October 2018 severely compromised this structural continuity. In 2019, Fuzzy Mean values dropped sharply at all sites (down to 0.184 in Aldino and 0.222 in Piana di Marcesina), while Fuzzy SD increased markedly, indicating a sudden shift from a structurally uniform forest to a highly heterogeneous post‑disturbance mosaic. Similar scenarios of structural simplification and spatial heterogeneity are widely documented after severe wind damage, where uprooted trees, coarse woody debris, exposed mineral soil and small surviving areas of canopy generate small-scale variability in terms of light, moisture and micro-sites\cite{Seidl2022}.
 
 The subsequent observation window (2021–2025) reveals a general upward trajectory in Fuzzy Mean across most study areas. Ecologically, this trend is best interpreted as early greening rather than a rapid return to pre‑Vaia forest structure \cite{Giupponi2023}. Remote‑sensing studies show that spectral or “greenness” recovery often occurs well before the re‑establishment of tall, closed‑canopy forests, and can be largely driven by non‑arboreal or early‑successional vegetation \cite{White2022}.
-As documented by Giupponi et al. (2023), post-Vaia environments are subject to intense recolonisation dynamics by herbaceous vegetation (such as Epilobium angustifolium or Calamagrostis villosa) and pioneer shrubs (e.g., Rubus idaeus), which quickly restore a continuous photosynthetic signal. While this early greening stabilises the topsoil, it also creates strong interspecific competition for natural tree regeneration.
-%nuovo
+As documented by Giupponi et al. (2023), post-Vaia environments are subject to intense recolonisation dynamics by herbaceous vegetation (such as \textit{Epilobium angustifolium} or \textit{Calamagrostis villosa}) and pioneer shrubs (e.g., \textit{Rubus idaeus}), which quickly restore a continuous photosynthetic signal. While this early greening stabilises the topsoil, it also creates strong interspecific competition for natural tree regeneration.
+
 Another factor that may have facilitated recolonisation by pioneer species is salvage logging. As discussed by Marangon et al. (2024), the impact of salvage logging leads to a significant loss of biological legacies, such as deadwood and micro-topography, which provide crucial shelter for seedlings and saplings. However, this removal of canopy cover and woody debris also creates a high-light environment, in which fast-growing broadleaves and pioneer species take advantage of this increased light transmission to rapidly outgrow and escape competition from the dense layer of tall herbs and shrubs\cite{Marangon2024}.
 Together, these factors explain the steady increase in NDVI values occurring in all the regions analysed. In fact, the trend observed is one of a drastic decline due to the storm, followed by an increase in the index to high values in 2025. However, there are two exceptions, Panchià and Aldino, where the maximum peak is reached in 2023 and a slight decline is observed in 2025. 
  
 
-The added value of combining Fuzzy Mean with SD becomes evident when comparing the distinct recovery trajectories of the different geographical areas. Piana di Marcesina and Vetriolo demonstrated a rapid "healing" process: their SD steadily decreased year by year after 2019, suggesting a vigorous and spatially uniform expansion of pioneer vegetation. Conversely, Fiera di Primiero maintained persistently high SD values (0.247 in 2023), indicating a much patchier and irregular recovery, likely driven by its more complex topography and steeper slopes. Furthermore, the model successfully captured temporal anomalies related to bioclimatic limits and human management. In Ville di Fiemme, the recovery was significantly delayed, with the Fuzzy Mean remaining stagnant until 2021 and the SD peaking only in 2023. This lag can be attributed to the higher elevation of the site, where a shorter growing season and harsher climatic conditions slow down the establishment of pioneer communities. Finally, the area of Aldino showed a unique secondary decline in the Fuzzy Mean between 2023 and 2025 (from 0.605 to 0.546).
+The added value of combining Fuzzy Mean with SD becomes evident when comparing the distinct recovery trajectories of the different geographical areas. Piana di Marcesina and Vetriolo demonstrated a rapid "healing" process: their SD steadily decreased year by year after 2019, suggesting a vigorous and spatially uniform expansion of pioneer vegetation. Conversely, Fiera di Primiero maintained persistently high SD values (0.247 in 2023), indicating a much patchier and irregular recovery, likely driven by its more complex topography and steeper slopes. 
+
+Additionally, the model identified temporal patterns likely attributable to bioclimatic constraints and human management. In Ville di Fiemme, the recovery was significantly delayed, with the Fuzzy Mean remaining stagnant until 2021 and the SD peaking only in 2023. This lag can be attributed to the higher elevation of the site, where a shorter growing season and harsher climatic conditions may have slowed down the establishment of pioneer communities. Finally, the area of Aldino showed a unique secondary decline in the Fuzzy Mean between 2023 and 2025 (from 0.605 to 0.546).
 
 Overall, the observed temporal patterns in Fuzzy Mean and SD across the six Vaia‑affected areas are consistent with a broader body of work on post‑disturbance forest ecology: rapid physiognomic recovery driven by pioneer and non‑forest vegetation, slower structural and compositional recovery of late‑successional tree species, strong modulation by topography, elevation and landscape context, and occasional non‑linear trajectories linked to human actions and climate variability \citep{Seidl2022, Cerioni2025}.
 
@@ -635,14 +644,14 @@ This thesis addressed the critical challenge of post-disturbance monitoring in A
 
 The primary contribution of this research lies in overcoming the limitations of traditional binary classifications (Forest/Non-Forest). The adoption of Fuzzy logic applied to Sentinel-2 time series (2017-2025) demonstrated that ecological recovery phases are not discrete states but continuous gradients. The results confirm that the use of continuous membership degrees allows for a more faithful modeling of the ecological uncertainty characterizing transitional landscapes. 
 
-From an analytical perspective, the innovative implementation of Ridgeline Plots proved very useful for visualising the spatial complexity of recovery. While conventional statistics based on averages tend to obscure internal variability, the analysis of density distributions and standard deviation made it possible to quantify the heterogeneity of the landscape. This makes it possible to distinguish between areas with homogeneous recovery and those characterised by a fragmented mosaic of bare soil, herbaceous vegetation and regeneration. 
+From an analytical perspective, the innovative implementation of Ridgeline Plots proved to be very useful for visualising the spatial complexity of recovery. While conventional statistics based on averages tend to obscure internal variability, the analysis of density distributions and standard deviation made it possible to quantify the heterogeneity of the landscape. This makes it possible to distinguish between areas with homogeneous recovery and those characterised by a fragmented mosaic of bare soil, herbaceous vegetation and regeneration. 
 
 From an ecological perspective, the results highlight a marked phenomenon of early greening, characterised by a rapid increase in average fuzzy values observed in the period 2021–2023. However, as already discussed, this spectral recovery should not be confused with complete structural recovery. The data suggest that this greening is mainly driven by the proliferation of pioneer species, shrubs and tall grasses, often accelerated by salvage logging operations that have cleared the ground. Consequently, although the satellite signal shows an increase in vegetative vigour, the protective function of the forest (and the restoration of mature woody biomass) will take decades to be fully re-established. 
 
 In conclusion, this study demonstrates that the integration of medium-resolution optical data, fuzzy logic, and advanced statistical visualisation provides forest managers with a powerful monitoring tool. Although future integration with three-dimensional data (LiDAR) remains necessary to validate the vertical component of forest structure, the proposed methodology provides a solid basis for identifying recovery trajectories and targeting silvicultural interventions where the natural resilience of the system struggles to manifest itself. 
 
 \section*{Data and code}
-Findable, accessible, interoperable and reusable (FAIR) data was used in my thesis, which can be consulted at the following link \url{10.5281/zenodo.18662221}. It is also possible to view details of the R code implemented for data analysis at the link \url{https://github.com/Fabbrizio99/Thesis_ridgeline/blob/main/ridgeline2.md}.
+Findable, Accessible, Interoperable and Reusable (FAIR) data was used in my thesis, which can be consulted at the following link \url{10.5281/zenodo.18662221}. It is also possible to view details of the R code implemented for data analysis at the link \url{https://github.com/Fabbrizio99/Thesis_ridgeline/blob/main/ridgeline2.md}.
 
 \begin{thebibliography}{999}
 
@@ -653,7 +662,7 @@ Findable, accessible, interoperable and reusable (FAIR) data was used in my thes
 \bibitem[Marangon et al. 2024]{Marangon2024}
     Marangon D., Betetto C., Wohlgemuth T., Cadez L., Alberti G., Tomelleri E., Lingua E. (2024), Impact of salvage logging on short-term natural regeneration in montane forests of the Alps after large windthrow events, in «Forest Ecology and Management», 567, 122085. https://doi.org/10.1016/j.foreco.2024.122085 
 \bibitem[Franklin et al. 2000]{Franklin2000}
-    Franklin, J.F. & Lindenmayer, David & Macmahon, J.A. & McKee, A. & Magnusson, J. & Perry, David & Waide, Robert & Foster, David. (2000). Threads of continuity: Ecosystem disturbances, biological legacies and ecosystem recovery. Conservation Biology in Practice. 1. 8-16. \url{https://www.researchgate.net/publication/304347496_Threads_of_continuity_Ecosystem_disturbances_biological_legacies_and_ecosystem_recovery}
+    Franklin, J.F. & Lindenmayer, David & Macmahon, J.A. & McKee, A. & Magnusson, J. & Perry, David & Waide, Robert & Foster, David. (2000). Threads of continuity: Ecosystem disturbances, biological legacies and ecosystem recovery. Conservation Biology in Practice. 1. 8-16. https://doi.org/10.1111/j.1526-4629.2000.tb00155.x
 \bibitem[Giupponi et al. 2023]{Giupponi2023} 
     Giupponi, L.; Leoni, V.; Pedrali, D.; Giorgi, A. Restoration of Vegetation Greenness and Possible Changes in Mature Forest Communities in Two Forests Damaged by the Vaia Storm in Northern Italy. Plants 2023, 12, 1369. https://doi.org/10.3390/plants12061369  
 \bibitem[Piazza et al. 2024]{Piazza2024}
