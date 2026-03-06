@@ -30,8 +30,11 @@
 \vspace{5mm}
 
 % \Large is 14.4pt
-{\Large{\bf{Corso di Laurea in Global Change Ecology and Sustainable Development Goals}}}
+{\Large{\bf{Corso di Laurea in Scienze e Gestione della Natura}}}
+\vspace{5mm}
 
+{\large{\bf{Curriculum: Global Change Ecology and
+Sustainable Development Goals }}} 
 \vspace{15mm}
 
 {\Huge{\bf Tracking forest recovery after Vaia: a Fuzzy logic approach with Ridgeline plots }}\\
@@ -709,7 +712,7 @@ Overall, the observed temporal patterns in Fuzzy Mean and SD across the six Vaia
 
 \subsection{Methodological advantages of Fuzzy logic and Ridgeline Plots} 
 
-The methodological advantages of Fuzzy logic in forest monitoring come from its ability to represent ecological conditions as continuous gradients rather than rigid binary categories, addressing key limitations of traditional Boolean approaches that impose strict thresholds on spectral indices like NDVI. As criticised by Silvert (2000), classical environmental indices based on rigid sets (crisp sets) with discontinuous boundaries fail to capture the true complexity of natural systems. Imposing a binary classification on a landscape in transition, as pointed out by Rocchini (2010), is unnatural and fails to take into account the intrinsic continuity of ecological patterns. This rigid approach risks leading to incomplete interpretations, especially when assessing the rapid expansion of pioneer vegetation in the undergrowth. 
+The methodological advantages of Fuzzy logic in forest monitoring come from its ability to represent ecological conditions as continuous gradients rather than rigid binary categories, addressing key limitations of traditional Boolean approaches that impose strict thresholds on spectral indices like NDVI. As criticised by \hyperref[bib:Silvert2000]{Silvert (2000)}, classical environmental indices based on rigid sets (crisp sets) with discontinuous boundaries fail to capture the true complexity of natural systems. Imposing a binary classification on a landscape in transition, as pointed out by \hyperref[bib:Rocchini2010]{Rocchini (2010)}, is unnatural and fails to take into account the intrinsic continuity of ecological patterns. This rigid approach risks leading to incomplete interpretations, especially when assessing the rapid expansion of pioneer vegetation in the undergrowth. 
 
 To overcome these structural limitations, Fuzzy logic’s continuous membership values effectively capture transitional states in disturbed landscapes. By assigning a membership degree ranging between 0 and 1, Fuzzy logic provides a powerful tool to manage ecological uncertainty more realistically \cite{Silvert2000}. During early recolonisation phases, where vegetation structure is neither bare soil nor mature forest, a pixel is mathematically translated into an intermediate Fuzzy value (e.g., 0.4 – 0.6). This approach aligns with modern ecological models that capture the blurred gradients and structural heterogeneity of recovering ecosystems \cite{Romero2023}. 
 
@@ -778,6 +781,7 @@ Findable, Accessible, Interoperable and Reusable (FAIR) data was used in my thes
 \bibitem[{Pusceddu 2020}]{Posceddu2020}
     Pusceddu A., Sarà G., Viaroli P. (2020), Ecologia, UTET Università, Milano.
 \bibitem[Rocchini 2010]{Rocchini2010}
+    \label{bib:Rocchini2010}
     Rocchini D. (2010), While Boolean sets non-gently rip: A theoretical framework on fuzzy sets for mapping landscape patterns, in «Ecological Complexity», 7, pp. 125–129. https://doi.org/10.1016/j.ecocom.2009.08.002
 \bibitem[Romero et al. 2023]{Romero2023}
     Romero D., Maneyro R., Guerrero J. C., Real R. (2023), Using fuzzy logic to compare species distribution models developed on the basis of expert knowledge and sampling records, in «Frontiers in Zoology», 20, 38. https://doi.org/10.1186/s12983-023-00515-x
@@ -786,6 +790,7 @@ Findable, Accessible, Interoperable and Reusable (FAIR) data was used in my thes
 \bibitem[Seidl et al. 2022]{Seidl2022}
      Seidl R., Turner M. G. (2022), Post-disturbance reorganisation of forest ecosystems in a changing world, in «PNAS - Proceedings of the National Academy of Sciences», 119, e2202190119. https://doi.org/10.1073/pnas.2202190119
 \bibitem[Silvert 2000]{Silvert2000}
+    \label{bib:Silvert2000}
      Silvert W. (2000), Fuzzy indices of environmental conditions, in «Ecological Modelling», 130, pp. 111-119. https://doi.org/10.1016/S0304-3800(00)00204-0
 \bibitem[White et al. 2022]{White2022}
     White J. C., Hermosilla T., Wulder M. A., Coops N. C. (2022), Mapping, validating, and interpreting spatio-temporal trends in post-disturbance forest recovery, in «Remote Sensing of Environment», 271, 112904. https://doi.org/10.1016/j.rse.2022.112904
